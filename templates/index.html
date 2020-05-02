@@ -2,17 +2,19 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <script>
+        // next line shows an error in the linter but works perfectly
+        var data = {{ data | tojson }};
+    </script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="./static/app.js"></script>
 </head>
 
 <body>
     <h1>Hello</h1>
-    {% if data %}
-        <p>{{ data.globalTerrorism }}</p>
-    {% endif %}
-    <script>
-        // var data = json.loads({{ data }});
-        // console.log(data);
-    </script>
+    <button onclick="render()">Click Me</button>
+    <div id="viz"></div>
 </body>
 
 </html>
