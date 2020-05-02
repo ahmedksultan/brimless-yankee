@@ -3,6 +3,7 @@ import urllib
 import os
 import data as dataModule
 data = {
+    "globalTerrorism": dataModule.globalTerrorism,
     "happiness": dataModule.happiness,
     "humanFreedomIndex": dataModule.humanFreedomIndex,
     "unemlployment": dataModule.unemployment,

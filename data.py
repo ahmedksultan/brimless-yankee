@@ -1,5 +1,12 @@
-# MISSING TERRORISM DATA
 import csv
+import string
+import sys
+
+globalTerrorism = []
+with open('./data/global-terrorism.csv', newline='') as globalTerrorismCsv:
+    reader = csv.reader(globalTerrorismCsv, delimiter=',')
+    for row in reader:
+        globalTerrorism.append(row)
 
 
 happiness = []
@@ -28,3 +35,4 @@ with open('./data/uni-rankings.csv', newline='') as universityRankingsCsv:
     reader = csv.reader(universityRankingsCsv, delimiter=',')
     for row in reader:
         universityRankings.append(row)
+

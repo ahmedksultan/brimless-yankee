@@ -7,8 +7,12 @@
 <body>
     <h1>Hello</h1>
     {% if data %}
-        <p>{{ data }}</p>
+        <p>{{ data.globalTerrorism }}</p>
     {% endif %}
+    <script>
+        // var data = json.loads({{ data }});
+        // console.log(data);
+    </script>
 </body>
 
 </html>

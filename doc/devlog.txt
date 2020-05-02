@@ -13,5 +13,4 @@ formatted data to make processing by the csv module easier).
 
 josephy -- 2020-05-02 12:20
 functional flask app, imported data from csv files and passed it to 
-jinja succesfully. Missing terrorism data, will figure that out by the end of
-the day.
+jinja succesfully. JS will process and display the data.
