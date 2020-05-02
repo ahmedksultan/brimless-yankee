@@ -11,6 +11,7 @@ josephY -- 2020-05-01 13:00
 modified data (made some files smaller by deleting extra columns,
 formatted data to make processing by the csv module easier). 
 
-josephy -- 2020-05-02 12:20
-functional flask app, imported data from csv files and passed it to 
-jinja succesfully. JS will process and display the data.
+josephY -- 2020-05-02 12:20
+First visualization using D3. Data is initalized in flask app, 
+then imported to javascript, and D3 creates a dotplot relating 
+happiness to value placed in GDP.

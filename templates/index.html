@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="./static/styles.css">
     <script>
         // next line shows an error in the linter but works perfectly
         var data = {{ data | tojson }};
@@ -14,7 +15,8 @@
 <body>
     <h1>Hello</h1>
     <button onclick="render()">Click Me</button>
-    <div id="viz"></div>
+    <h3>First Visualization: Happiness Score vs. The Extent To Which GDP contributed to the Calculation of the Happiness Score</h3>
+    <div id="viz" class="viz-container"></div>
 </body>
 
 </html>
