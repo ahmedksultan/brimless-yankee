@@ -6,3 +6,12 @@ Removed version 1 of design.pdf.
 Added version 2 of design.pdf.
 Updated devlog.txt.
 Removed stray database.
+
+josephY -- 2020-05-01 13:00
+modified data (made some files smaller by deleting extra columns,
+formatted data to make processing by the csv module easier). 
+
+josephy -- 2020-05-02 12:20
+functional flask app, imported data from csv files and passed it to 
+jinja succesfully. Missing terrorism data, will figure that out by the end of
+the day.
