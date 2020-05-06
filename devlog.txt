@@ -16,6 +16,19 @@ First visualization using D3. Data is initalized in flask app,
 then imported to javascript, and D3 creates a dotplot relating
 happiness to value placed in GDP.
 
+ahmedS -- 2020-05-05 14:45
+Reorganized repository to better match the required structure.
+Removed version 2 of design.pdf.
+Added version 3 of design.pdf.
+Added flag.jpg.
+Added requirements.txt.
+Updated devlog.txt.
+
+ahmedS -- 2020-05-05 15:00
+Reorganized css/, js/, templates/ to be included within the app/static directory.
+Begun cleaning up README.md, need to clarify some stuff before it can be completed.
+Updated devlog.txt.
+
 nahiK -- 2020-05-06 11:06
 Working on app.py and why it should be init.py
 Developing analysis of happiness vs. unemployment total based off of designdoc specifications
