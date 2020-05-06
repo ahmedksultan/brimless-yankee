@@ -1,4 +1,4 @@
-ahmedS -- 2020-04-27 ~07:50 
+ahmedS -- 2020-04-27 ~07:50
 Added version 1 of design.pdf.
 
 ahmedS -- 2020-04-30 07:33
@@ -9,9 +9,17 @@ Removed stray database.
 
 josephY -- 2020-05-01 13:00
 modified data (made some files smaller by deleting extra columns,
-formatted data to make processing by the csv module easier). 
+formatted data to make processing by the csv module easier).
 
 josephY -- 2020-05-02 12:20
-First visualization using D3. Data is initalized in flask app, 
-then imported to javascript, and D3 creates a dotplot relating 
+First visualization using D3. Data is initalized in flask app,
+then imported to javascript, and D3 creates a dotplot relating
 happiness to value placed in GDP.
+
+nahiK -- 2020-05-06 11:06
+Working on app.py and why it should be init.py
+Developing analysis of happiness vs. unemployment total based off of designdoc specifications
+
+nahiK -- 2020-05-06 12:52
+Looking into Happiness vs. ROL
+Also looking into Happiness vs. Concentration of Top Universities and how to analyze the information
