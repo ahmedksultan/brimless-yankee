@@ -45,4 +45,10 @@ Reorganized directory structure, and made templates for visualization pages. Eac
 will extend the template, provide a title and a paragraph of description, and have its own JS file.
 
 vishwaaS -- 2020-05-06 21:00
-Working on modifying data for ROL vs. happiness visualization based off of designdoc specifications; switched to this because data for college was a little complicated for MVP
+Started working on modifying data for ROL vs. happiness visualization based off of designdoc specifications; switched to this because data for college was a little complicated for MVP
+
+vishwaaS -- 2020-05-07 5:30
+Created a new CSV by sorting info from original two CSVs that compiles happiness and humanFreedomIndex information
+Created route which uses CSV and set up HTML, JS files to set up visualization
+Modified JS based off what joseph set up for visualization 1 to work for this visualization
+Finished ROL vs. happiness visualization based off of designdoc specifications; switched to this because data for college was a little complicated for MVP
