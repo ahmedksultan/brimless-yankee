@@ -1,5 +1,5 @@
-console.log(data)
-
+// setTimeout(() => console.log(data), 2500);
+var rendered = 0;
 
 const countriesLollipop = function(data){
     console.log("hi");
@@ -80,5 +80,8 @@ const countriesLollipop = function(data){
 
 
 const render = function(){
-    countriesLollipop(data.happiness);
+    if (rendered === 0){
+        countriesLollipop(data.happiness);
+        rendered = 1;
+    }
 }

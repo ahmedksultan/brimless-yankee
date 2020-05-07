@@ -36,3 +36,7 @@ Developing analysis of happiness vs. unemployment total based off of designdoc s
 nahiK -- 2020-05-06 12:52
 Looking into Happiness vs. ROL
 Also looking into Happiness vs. Concentration of Top Universities and how to analyze the information
+
+josephY -- 2020-05-06 20:30
+Reorganized directory structure, and made templates for visualization pages. Each new visualization
+will extend the template, provide a title and a paragraph of description, and have its own JS file.

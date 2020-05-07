@@ -1,0 +1,9 @@
+{% extends "viz-template.html" %} 
+<!-- PLEASE LOOK AT viz-template.html TO UNDERSTAND WHAT IS HAPPENING -->
+{% block title %}Happiness Vs. GDP{% endblock %}
+{% block scriptPath %}./static/js/happiness-gdp.js{% endblock %}
+{% block vizTitle %}First Visualization: Happiness Score vs. The Extent To Which GDP contributed to the Calculation of the Happiness Score{% endblock %}
+{% block controls %}
+    <button onclick="render()">Render Visualization</button>
+{% endblock %}
+<!-- The div containing the visualization is in viz-template.html -->
