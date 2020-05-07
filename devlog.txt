@@ -4,8 +4,8 @@ Added version 1 of design.pdf.
 ahmedS -- 2020-04-30 07:33
 Removed version 1 of design.pdf.
 Added version 2 of design.pdf.
-Updated devlog.txt.
 Removed stray database.
+Updated devlog.txt.
 
 josephY -- 2020-05-01 13:00
 modified data (made some files smaller by deleting extra columns,
@@ -55,5 +55,10 @@ Modified JS based off what joseph set up for visualization 1 to work for this vi
 Finished ROL vs. happiness visualization based off of designdoc specifications
 
 ahmedS -- 2020-05-07 07:30
+Updated styles.css, index.html.
 Begun moving front-end design from experiments into the project.
 Updated and fixed devlog entries.
+
+ahmedS -- 2020-05-07 09:04
+Updated requirements.txt.
+Updated devlog.txt.
