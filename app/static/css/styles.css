@@ -1,3 +1,5 @@
+/* BG color: #fff261 */
+
 .viz-container{
     display: flex;
     align-items: center;
@@ -12,9 +14,14 @@ h3{
 }
 
 body {
-    background-color: #ffc107;
+    /* background-color: #fff261; */
+    background: #Fff url(./../img/pattern.png) repeat;
 }
 
 .object {
     margin: auto;
+}
+
+.display-1{
+    color: #ddb4e0;
 }
