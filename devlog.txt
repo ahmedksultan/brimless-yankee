@@ -47,9 +47,13 @@ will extend the template, provide a title and a paragraph of description, and ha
 vishwaaS -- 2020-05-06 21:00
 Started working on modifying data for ROL vs. happiness visualization based off of designdoc specifications; switched to this because data for college was a little complicated for MVP
 
-vishwaaS -- 2020-05-07 5:30
+vishwaaS -- 2020-05-07 05:30
 Stripped humanFreedomIndex csv out of stuff it didn't need mainly data for years before 2016 and extraneous info
 Created a new CSV by sorting info from original two CSVs that compiles happiness and humanFreedomIndex information
 Created route which uses CSV and set up HTML, JS files to set up visualization
 Modified JS based off what joseph set up for visualization 1 to work for this visualization
 Finished ROL vs. happiness visualization based off of designdoc specifications
+
+ahmedS -- 2020-05-07 07:30
+Begun moving front-end design from experiments into the project.
+Updated and fixed devlog entries.
