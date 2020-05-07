@@ -14,10 +14,12 @@
         // next line shows an error in the linter but works perfectly
         var data = {{ data | tojson }};
     </script>
+    <a href="/">&#8617; back</a>
     <h1 id="title" class="viz-title">{% block vizTitle %}{% endblock %}</h1>
     {% block controls %}{% endblock %}
     <div id="viz" class="viz-container"></div>
     
+    <div id="description">{% block description %}This is a visualization{% endblock %}</div>
     <div id="footer">
         {% block footer %}
         <hr>
