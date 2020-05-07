@@ -16,6 +16,9 @@ First visualization using D3. Data is initalized in flask app,
 then imported to javascript, and D3 creates a dotplot relating
 happiness to value placed in GDP.
 
+vishwaaS -- 2020-05-04 14:00
+Working on parsing data to collect colleges via dictionary that will allow for the college # v happiness
+
 ahmedS -- 2020-05-05 14:45
 Reorganized repository to better match the required structure.
 Removed version 2 of design.pdf.
@@ -40,3 +43,6 @@ Also looking into Happiness vs. Concentration of Top Universities and how to ana
 josephY -- 2020-05-06 20:30
 Reorganized directory structure, and made templates for visualization pages. Each new visualization
 will extend the template, provide a title and a paragraph of description, and have its own JS file.
+
+vishwaaS -- 2020-05-06 21:00
+Working on modifying data for ROL vs. happiness visualization based off of designdoc specifications; switched to this because data for college was a little complicated for MVP

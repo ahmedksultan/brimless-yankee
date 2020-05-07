@@ -36,3 +36,8 @@ with open('./data/uni-rankings.csv', newline='') as universityRankingsCsv:
     for row in reader:
         universityRankings.append(row)
 
+happinessROL = []
+with open('./data/happiness-ROL.csv', newline='') as happinessROLCsv:
+    reader = csv.DictReader(happinessROLCsv, delimiter=',')
+    for row in reader:
+        happinessROL.append(row)

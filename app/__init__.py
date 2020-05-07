@@ -7,7 +7,8 @@ data = {
     "happiness": dataModule.happiness,
     "humanFreedomIndex": dataModule.humanFreedomIndex,
     "unemlployment": dataModule.unemployment,
-    "universityRankings": dataModule.universityRankings
+    "universityRankings": dataModule.universityRankings,
+    "happinessROL": dataModule.happinessROL
 }
 
 
@@ -19,8 +20,11 @@ app.secret_key = os.urandom(24)
 def index():
     return render_template('index.html')
 
+@app.route('/happiness-rol')
+def happinessROL():
+    return render_template('happiness-rol.html', data=data)
 
-@app.route('/happiness-gdp') 
+@app.route('/happiness-gdp')
 def happinessGdp():
     return render_template('happiness-gdp.html', data=data)
 
