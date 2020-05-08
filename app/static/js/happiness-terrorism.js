@@ -21,7 +21,7 @@ const countriesLollipop = function (data) {
 
     // Add X axis
     var x = d3.scaleLinear()
-        .domain([0, d3.max(data.map((d) => d["Economy..GDP.per.Capita."]))])
+        .domain([0, 35])
         // .domain([0, 5])
         .range([0, width])
     svg.append("g")
@@ -35,8 +35,7 @@ const countriesLollipop = function (data) {
             "translate(" + (width / 2) + " ," +
             (height + 40) + ")")
         .style("text-anchor", "middle")
-        .text(`Extent to which GDP contributes to the 
-        calculation of the Happiness Score.`);
+        .text(`Instances of Terrorism in 2017`);
 
     // Y axis
     var y = d3.scaleLinear()
@@ -52,7 +51,7 @@ const countriesLollipop = function (data) {
             (height / 2) + ")" +
             "rotate(-90)")
         .style("text-anchor", "middle")
-        .text("Happiness Score");
+        .text("Happiness Score in 2017");
 
 
     // // Lines
@@ -71,29 +70,39 @@ const countriesLollipop = function (data) {
         .data(data)
         .enter()
         .append("circle")
-        .attr("cx", function (d) { return x(d["Economy..GDP.per.Capita."]); })
+        .attr("cx", function (d) { return x(d["terrorIncidents"]); })
         .attr("cy", function (d) { return y(d["Happiness.Score"]); })
         .attr("r", "3")
         .style("fill", "#69b3a2")
         .attr("stroke", "black")
 }
 
-const perCapita = function(){
-    data.happinessTerrorism.map((row) => {
-        fetch(`https://data.opendatasoft.com/api/records/1.0/search/?dataset=world-population%40kapsarc&facet=year&facet=country_name&refine.year=2017&refine.country_name=${row['Country']}`)
-        .then(response => {
-            return response.json();
-        }).then(data => {
-            row["terrorIncidents"] = (row["terrorIncidents"] / data["records"][0]["fields"]["value"]);
-        });        
-    });
-};
+// const perCapita = function(){
+//     return Promise.all(
+//         data.happinessTerrorism.map((row, i) => {
+//             return fetch(`https://data.opendatasoft.com/api/records/1.0/search/?dataset=world-population%40kapsarc&facet=year&facet=country_name&refine.year=2017&refine.country_name=${row['Country']}`)
+//             .then(response => {
+//                 return response.json();
+//             }).then(jsonData => {
+//                 console.log(jsonData);
+//                 if (jsonData["records"].length != 0){
+//                     row["terrorIncidents"] = (row["terrorIncidents"] / jsonData["records"][0]["fields"]["value"]);
+//                 } else {
+//                     delete row;
+//                 };
+//             });        
+//         })
+//     ); 
+// };
 
 
 const render = function () {
-    // if (rendered === 0) {
-    //     countriesLollipop(data.happiness);
-    //     rendered = 1;
-    // }
-    
+    if (rendered === 0) {
+        rendered = 1;
+        // perCapita().then(() => {
+        //     console.log(data.happinessTerrorism); 
+        //     countriesLollipop(data.happinessTerrorism)
+        // });
+        countriesLollipop(data.happinessTerrorism);
+    }
 }
