@@ -29,6 +29,10 @@ def happinessROL():
 def happinessGdp():
     return render_template('happiness-gdp.html', data=data)
 
+@app.route('/happiness-terrorism')
+def happinessTerrorism():
+    return render_template('happiness-terrorism.html', data=data)
+
 
 if __name__ == "__main__":
     app.debug = True
