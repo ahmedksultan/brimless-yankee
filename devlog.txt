@@ -67,3 +67,7 @@ vishwaaS -- 2020-05-07 21:45
 Hopped on a call with Joseph to figure out how to best organize Terror data
 Readjusted Terror data with happiness data in a new .csv file through dicts via python
 Finished Terror vs. happiness visualization based off of designdoc specifications (completed once Joseph pushed JS end)
+
+josephY -- 2020-05-07 22:40
+Tried but kinda failed to incorporate per capita calcualtions into the Happiness
+vs terrorism visualization. Will work on it further tomorrow.
