@@ -73,4 +73,8 @@ Tried but kinda failed to incorporate per capita calcualtions into the Happiness
 vs terrorism visualization. Will work on it further tomorrow.
 
 ahmedS -- 2020-05-08 14:24
-Updated requirements.txt and devlog.txt (forgot to push).
+Updated README.md and devlog.txt (forgot to push).
+
+ahmedS -- 2020-05-08 14:28
+Updated index.html to include terrorism work from yesterday.
+Updated devlog.txt to reflect changes.
