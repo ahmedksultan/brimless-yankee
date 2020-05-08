@@ -71,10 +71,11 @@ const relation = function(data){
     .data(data)
     .enter()
     .append("circle")
+        .transition()
         .attr("cx", function(d) { return x(d["pf_rol"]); })
         .attr("cy", function(d) { return y(d["Happiness.Score"]); })
-        .attr("r", "3")
-        .style("fill", "#69b3a2")
+        .attr("r", "4")
+        .style("fill", "#b17db5")
         .attr("stroke", "black")
 }
 

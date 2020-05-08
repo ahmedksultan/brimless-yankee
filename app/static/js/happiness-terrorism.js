@@ -67,13 +67,14 @@ const countriesLollipop = function (data) {
 
     // Circles
     svg.selectAll("mycircle")
-        .data(data)
-        .enter()
-        .append("circle")
+    .data(data)
+    .enter()
+    .append("circle")
+        .transition()
         .attr("cx", function (d) { return x(d["terrorIncidents"]); })
         .attr("cy", function (d) { return y(d["Happiness.Score"]); })
-        .attr("r", "3")
-        .style("fill", "#69b3a2")
+        .attr("r", "4")
+        .style("fill", "#b17db5")
         .attr("stroke", "black")
 }
 

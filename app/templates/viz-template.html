@@ -2,30 +2,34 @@
 <html lang="en">
 <head>
     {% block head %}
-    <link rel="stylesheet" href="./static/css/styles.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/viz-page-styles.css" />
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="{% block scriptPath %}./static/js/app.js{% endblock %}"></script>
     <title>{% block title %}{% endblock %} - Data Visualization</title>
     {% endblock %}
 </head>
 <body>
-    {% block body %}
-    <script>
-        // next line shows an error in the linter but works perfectly
-        var data = {{ data | tojson }};
-    </script>
-    <a href="/">&#8617; back</a>
-    <h1 id="title" class="viz-title">{% block vizTitle %}{% endblock %}</h1>
-    {% block controls %}{% endblock %}
-    <div id="viz" class="viz-container"></div>
-    
-    <div id="description">{% block description %}This is a visualization{% endblock %}</div>
-    <div id="footer">
-        {% block footer %}
-        <hr>
-        &copy; Copyright 2020 by The Brimless-Yankee Trust.
+    <div class="container">
+        {% block body %}
+        <script>
+            // next line shows an error in the linter but works perfectly
+            var data = {{ data | tojson }};
+        </script>
+        <a href="/">&#8617; back</a>
+        <h1 id="title" class="viz-title">{% block vizTitle %}{% endblock %}</h1>
+        {% block controls %}{% endblock %}
+        <div id="viz" class="viz-container"></div>
+        
+        <div id="description">{% block description %}This is a visualization{% endblock %}</div>
+        <div id="footer">
+            {% block footer %}
+            <hr>
+            &copy; Copyright 2020 by The Brimless-Yankee Trust.
+            {% endblock %}
+        </div>
         {% endblock %}
     </div>
-    {% endblock %}
 </body>
 </html>

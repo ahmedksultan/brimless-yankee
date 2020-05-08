@@ -1,5 +1,3 @@
-/* BG color: #fff261 */
-
 .viz-container{
     display: flex;
     align-items: center;
@@ -15,7 +13,7 @@ h3{
 
 body {
     /* background-color: #fff261; */
-    background: #Fff url(./../img/pattern.png) repeat;
+    /* background: #Fff url(./../img/pattern.png) repeat; */
 }
 
 .object {
@@ -25,6 +23,7 @@ body {
 .display-1{
     color: #ddb4e0;
 }
+
 .btn{
     background-color: #ddb4e0;
     border-color: #b17db5;
@@ -33,3 +32,13 @@ body {
     background-color: #b17db5;
     border-color: #ddb4e0;
 }
+
+a{
+    text-decoration: none;
+    color: #b17db5;
+}
+a:hover{
+    text-decoration: underline;
+    color: #b17db5;
+}
+
