@@ -69,5 +69,8 @@ Readjusted terrorism data with happiness data in a new .csv file through dicts v
 Finished terrorism vs. happiness visualization based off of designdoc specifications (completed once Joseph pushed JS end)
 
 josephY -- 2020-05-07 22:40
-Tried but kinda failed to incorporate per capita calcualtions into the Happiness
+Tried but kinda failed to incorporate per capita calcualtions into the Happiness 
 vs terrorism visualization. Will work on it further tomorrow.
+
+ahmedS -- 2020-05-08 14:24
+Updated requirements.txt and devlog.txt (forgot to push).
