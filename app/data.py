@@ -41,3 +41,9 @@ with open('./data/happiness-ROL.csv', newline='') as happinessROLCsv:
     reader = csv.DictReader(happinessROLCsv, delimiter=',')
     for row in reader:
         happinessROL.append(row)
+
+# happinessTerrorism = []
+# with open('./data/data-organizing/dict-terror.py') as happinessTerrorismCsv:
+#     reader = csv.DictReader(happinessTerrorismCsv, delimiter=',')
+#     for row in reader:
+#         happinessTerrorism.append(row)

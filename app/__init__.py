@@ -8,7 +8,8 @@ data = {
     "humanFreedomIndex": dataModule.humanFreedomIndex,
     "unemlployment": dataModule.unemployment,
     "universityRankings": dataModule.universityRankings,
-    "happinessROL": dataModule.happinessROL
+    "happinessROL": dataModule.happinessROL,
+    "happinessTerrorism": dataModule.happinessTerrorism
 }
 
 
