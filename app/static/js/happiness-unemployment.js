@@ -22,7 +22,7 @@ const unemp = function (data) {
     // Add X axis
     var x = d3.scaleLinear()
         .domain([0, d3.max(data.map((d) => d["Unemployment, total (% of total labor force) (modeled ILO estimate)"]))])
-        // .domain([0, 5]) exemplary in which it refers to unemployment csv through data sets and whatnot
+        // .domain([0, 5]) sets domain given input
         .range([ 0, width])
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
