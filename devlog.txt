@@ -87,3 +87,6 @@ These two coincide to form relationships and analyze data when given the variabl
 
 khanN -- 2020-05-10 14:56
 Finished adding attributes domain and style to the js file, should be all set as of requirements
+
+khanN -- 2020-05-10 15:19
+Forgot to update devlog last push, but I am currently on the first wave on adding comments to some code
