@@ -21,7 +21,7 @@ const unemp = function (data) {
 
     // Add X axis
     var x = d3.scaleLinear()
-        .domain([0, d3.max(data.map((d) => d["unemployment"]))])
+        .domain([0, d3.max(data.map((d) => d["Unemployment, total (% of total labor force) (modeled ILO estimate)"]))])
         // .domain([0, 5])
         .range([ 0, width])
     svg.append("g")
@@ -52,7 +52,7 @@ const unemp = function (data) {
         (height / 2) + ")" +
         "rotate(-90)")
     .style("text-anchor", "middle")
-    .text("Happiness Score in 2017");
+    .text("Lengths as to which Unemployment in a nation dictates the countries Happiness Score");
 
 
     // // Lines
@@ -71,7 +71,7 @@ const unemp = function (data) {
     .data(data)
     .enter()
     .append("circle")
-    .attr("cx", function(d) { return x(d["unemployment"];})
+    .attr("cx", function(d) { return x(d["Unemployment, total (% of total labor force) (modeled ILO estimate)"];})
     .attr("cx", function(d) { return x(d["Happiness.Score"];})
     .attr("r", "4")
     .style("fill", "#b17db5")
