@@ -17,9 +17,9 @@ const unemp = function (data) {
           .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
 
-    // Parse the Data
+    // Parse the Data given specific attributes
 
-    // Add X axis
+    // Added X axis to portray the data
     var x = d3.scaleLinear()
         .domain([0, d3.max(data.map((d) => d["Unemployment, total (% of total labor force) (modeled ILO estimate)"]))])
         // .domain([0, 5]) sets domain given input
