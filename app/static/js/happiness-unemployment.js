@@ -82,5 +82,7 @@ const render = function(){
     if (rendered === 0){
         countriesunemp(data.happinessunemployment);
         rendered = 1;
+
+      // demonstrates a relationship in which unemp is 0, returns data to analyze based on happiness
     }
 }
