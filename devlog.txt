@@ -84,3 +84,6 @@ Added finishing touches on Happiness vs. Unemployment, Total based off of design
 Includes updates on happiness-unemployment.html
 Also includes updates on happines-unemployment.js
 These two coincide to form relationships and analyze data when given the variables
+
+khanN -- 2020-05-10 14:56
+Finished adding attributes domain and style to the js file, should be all set as of requirements

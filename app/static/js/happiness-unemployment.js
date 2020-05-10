@@ -21,8 +21,8 @@ const unemp = function (data) {
 
     // Add X axis
     var x = d3.scaleLinear()
-        .domain([])
-
+        .domain([0, d3.max(data.map((d) => d["unemployment"]))])
+        // .domain([0, 5])
         .range([ 0, width])
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
@@ -71,11 +71,11 @@ const unemp = function (data) {
     .data(data)
     .enter()
     .append("circle")
-    .attr()
-    .attr()
-    .attr()
-    .style()
-    .attr()
+    .attr("cx", function(d) { return x(d["unemployment"];})
+    .attr("cx", function(d) { return x(d["Happiness.Score"];})
+    .attr("r", "4")
+    .style("fill", "#b17db5")
+    .attr("stroke", "black")
 }
 
 const render = function(){
