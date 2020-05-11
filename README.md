@@ -2,8 +2,8 @@
 
 ## Roster (with roles)
 - **Ahmed Sultan**: PM, frontend design
-- **Joseph Yusufov**: Data management, D3, backend
-- **Vishwaa Sofat**: D3, backend
+- **Joseph Yusufov**: D3, backend, frontend design
+- **Vishwaa Sofat**: Data management, D3, backend
 - **Nahi Khan**: D3, backend
 
 ## Description
