@@ -109,3 +109,7 @@ Added buttons on index.html to showcase all visualizations
 
 ahmedS -- 2020-05-11 05:41
 Fixed data for unemployment, calling with Vishwaa to finalize the visualization for unemployment.
+Updated devlog.txt.
+
+ahmedS -- 2020-05-11 05:58
+All five visualizations working, MVP completed.

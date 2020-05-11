@@ -83,7 +83,7 @@ const countriesUnemp = function(data){
 
 const render = function(){
     if (rendered === 0){
-        countriesLollipop(data.happinessUnemployment);
+        countriesUnemp(data.happinessUnemployment);
         rendered = 1;
     }
 }
