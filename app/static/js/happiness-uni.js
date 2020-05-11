@@ -35,8 +35,8 @@ const countriesUni = function(data){
               "translate(" + (width/2) + " ," +
                              (height + 40) + ")")
         .style("text-anchor", "middle")
-        .text(`Extent to which presence of top univiersities contributes to the
-        calculation of the Happiness Score.`);
+        .text(`Extent to which top univiersities contribute to the
+    Happiness Score.`);
 
     // Y axis
     var y = d3.scaleLinear()
