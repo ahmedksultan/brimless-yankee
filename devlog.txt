@@ -111,5 +111,9 @@ ahmedS -- 2020-05-11 05:41
 Fixed data for unemployment, calling with Vishwaa to finalize the visualization for unemployment.
 Updated devlog.txt.
 
-ahmedS -- 2020-05-11 05:58
-All five visualizations working, MVP completed.
+vishwaaS -- 2020-05-11 05:59
+Made minor edits to get happiness v unemployment js working once Ahmed had the data modified as per my request
+MVP done :)
+
+ahmedS -- 2020-05-11 06:00
+Made one-line edit to Vishwaa's code, now definitely done
