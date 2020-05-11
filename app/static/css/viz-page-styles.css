@@ -42,3 +42,6 @@ a:hover{
     color: #b17db5;
 }
 
+.viz-container{
+    height: 750px;
+}

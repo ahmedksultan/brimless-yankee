@@ -1,0 +1,70 @@
+{% extends "viz-template.html" %}
+<!-- PLEASE LOOK AT viz-template.html TO UNDERSTAND WHAT IS HAPPENING -->
+{% block title %}Global Terrorism Heatmap{% endblock %}
+{% block scriptPath %}{% endblock %}
+{% block body %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="./static/js/datamaps.world.min.js"></script>
+    <script src="https://res.cloudinary.com/geotargetly/raw/upload/v1579830286/data/iso_3166_country_codes.json"></script>
+    {{ super() }}
+
+    <script>
+        console.log(data.happinessTerrorism);
+        const dataToRender = fetch("https://res.cloudinary.com/geotargetly/raw/upload/v1579830286/data/iso_3166_country_codes.json")
+        .then(res => {
+            return res.json();
+        }).then(jsonCountryCodes => {
+            return data.happinessTerrorism.map((obj, i) => {
+                console.log(jsonCountryCodes);
+                let countryCode = jsonCountryCodes.find((countryElement) => {
+                    return countryElement["country_name"] == obj["Country"]
+                })["alpha_3"];
+
+                let fillKey;
+                switch(true){
+                    case (obj["terrorIncidents"] < 11):
+                        fillKey = "lv1";
+                        break;
+                    case (obj["terrorIncidents"] < 101):
+                        fillKey = "lv2";
+                        break;
+                    case (obj["terrorIncidents"] < 501):
+                        fillKey = "lv3";
+                        break;
+                    case (obj["terrorIncidents"] < 1001):
+                        fillKey = "lv4";
+                        break;
+                    default:
+                        fillKey = "lv5";
+                        break;
+                }
+
+                return({countryCode: {"fillKey": fillKey, "Number of Incidents": obj["terrorIncidents"]}})
+            })
+        });
+
+        var reds = d3.scaleOrdinal(d3.schemeReds[5]);
+
+        var basic_choropleth = new Datamap({
+            element: document.getElementById("viz"),
+            projection: 'mercator',
+            fills: {
+                defaultFill: "#ccc",
+                lv5: reds[4],
+                lv4: reds[3],
+                lv3: reds[2],
+                lv2: reds[1],
+                lv1: reds[0],
+            },
+            data: dataToRender
+        });
+
+</script>
+{% endblock %}
+{% block vizTitle %}Global Terrorism Heatmap{% endblock %}
+{% block description %}{% endblock %}
+<!-- {% block controls %}
+<button class="btn btn-dark" onclick="render()">Render Visualization</button>
+{% endblock %} -->
+<!-- The div containing the visualization is in viz-template.html -->
