@@ -79,14 +79,17 @@ ahmedS -- 2020-05-08 14:28
 Updated index.html to include terrorism work from yesterday.
 Updated devlog.txt to reflect changes.
 
-khanN -- 2020-05-10 14:25
+nahiK -- 2020-05-10 14:25
 Added finishing touches on Happiness vs. Unemployment, Total based off of designdoc
 Includes updates on happiness-unemployment.html
 Also includes updates on happines-unemployment.js
 These two coincide to form relationships and analyze data when given the variables
 
-khanN -- 2020-05-10 14:56
+nahiK -- 2020-05-10 14:56
 Finished adding attributes domain and style to the js file, should be all set as of requirements
 
-khanN -- 2020-05-10 15:19
+nahiK -- 2020-05-10 15:19
 Forgot to update devlog last push, but I am currently on the first wave on adding comments to some code
+
+ahmedS -- 2020-05-11 02:58
+Fixed Nahi's comments on devlog.txt to align with format
