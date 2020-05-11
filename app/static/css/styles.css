@@ -23,11 +23,15 @@ body {
 }
 
 .display-1{
-    color: #ddb4e0;
+    color: black;
 }
+.display-4{
+    color: black;
+}
+
 .btn{
-    background-color: #ddb4e0;
-    border-color: #b17db5;
+    background-color: black;
+    border-color: black;
 }
 .btn:hover{
     background-color: #b17db5;
