@@ -1,7 +1,7 @@
 // setTimeout(() => console.log(data), 2500);
 var rendered = 0;
 
-const unemp = function (data) {
+const countriesUnemp = function(data) {
     console.log("hi");
     // set the dimensions and margins of the graph
     var margin = { top: 10, right: 30, bottom: 40, left: 50 },
@@ -71,16 +71,18 @@ const unemp = function (data) {
     .data(data)
     .enter()
     .append("circle")
-    .attr("cx", function(d) { return x(d["Unemployment, total (% of total labor force) (modeled ILO estimate)"];})
-    .attr("cx", function(d) { return x(d["Happiness.Score"];})
-    .attr("r", "4")
-    .style("fill", "#b17db5")
-    .attr("stroke", "black")
+        .transition()
+        .duration(500)
+        .attr("cx", function(d) { return x(d["Unemployment, total (% of total labor force) (modeled ILO estimate)"]); })
+        .attr("cx", function(d) { return x(d["Happiness.Score"]); })
+        .attr("r", "4")
+        .style("fill", "#b17db5")
+        .attr("stroke", "black")
 }
 
 const render = function(){
     if (rendered === 0){
-        countriesunemp(data.happinessunemployment);
+        countriesUnemp(data.unemployment);
         rendered = 1;
 
       // demonstrates a relationship in which unemp is 0, returns data to analyze based on happiness

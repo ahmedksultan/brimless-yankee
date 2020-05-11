@@ -6,16 +6,14 @@ data = {
     "globalTerrorism": dataModule.globalTerrorism,
     "happiness": dataModule.happiness,
     "humanFreedomIndex": dataModule.humanFreedomIndex,
-    "unemlployment": dataModule.unemployment,
+    "unemployment": dataModule.unemployment,
     "universityRankings": dataModule.universityRankings,
     "happinessROL": dataModule.happinessROL,
     "happinessTerrorism": dataModule.happinessTerrorism
 }
 
-
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
-
 
 @app.route('/')
 def index():
@@ -33,6 +31,9 @@ def happinessGdp():
 def happinessTerrorism():
     return render_template('happiness-terrorism.html', data=data)
 
+@app.route('/happiness-unemployment')
+def happinessUnemployment():
+    return render_template('happiness-unemployment.html', data=data)
 
 if __name__ == "__main__":
     app.debug = True

@@ -92,4 +92,10 @@ nahiK -- 2020-05-10 15:19
 Forgot to update devlog last push, but I am currently on the first wave on adding comments to some code
 
 ahmedS -- 2020-05-11 02:58
-Fixed Nahi's comments on devlog.txt to align with format
+Fixed Nahi's comments on devlog.txt to align with format.
+Edited devlog.txt.
+
+ahmedS -- 2020-05-11 03:28
+Fixed Nahi's code of happiness-unemployment.js code to render the D3 visualization and actually load in the data.
+ISSUE: cx doesn't work properly, looking into that now.
+Edited devlog.txt.
