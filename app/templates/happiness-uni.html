@@ -1,0 +1,10 @@
+{% extends "viz-template.html" %}
+<!-- PLEASE LOOK AT viz-template.html TO UNDERSTAND WHAT IS HAPPENING -->
+{% block title %}Happiness Vs. Top University Presence{% endblock %}
+{% block scriptPath %}./static/js/happiness-terrorism.js{% endblock %}
+{% block vizTitle %}Fourth Visualization: Happiness Score vs. Top University Presence{% endblock %}
+{% block description %}This visualization renders a dot for each country represented. The axes represent the number of top universites in the country on the horizontal, and the happiness score on the vertical, for each country represented.{% endblock %}
+{% block controls %}
+<button class="btn btn-dark" onclick="render()">Render Visualization</button>
+{% endblock %}
+<!-- The div containing the visualization is in viz-template.html -->

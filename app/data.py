@@ -47,3 +47,15 @@ with open('./data/happiness-terrorism.csv') as happinessTerrorismCsv:
     reader = csv.DictReader(happinessTerrorismCsv, delimiter=',')
     for row in reader:
         happinessTerrorism.append(row)
+
+happinessUnemployment = []
+with open('./data/happiness-unemployment.csv') as happinessUnemploymentCsv:
+    reader = csv.DictReader(happinessUnemploymentCsv, delimiter=',')
+    for row in reader:
+        happinessUnemployment.append(row)
+
+happinessUni = []
+with open('./data/happiness-uni.csv') as happinessUniCsv:
+    reader = csv.DictReader(happinessUniCsv, delimiter=',')
+    for row in reader:
+        happinessUni.append(row)

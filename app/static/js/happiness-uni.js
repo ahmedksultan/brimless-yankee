@@ -1,26 +1,28 @@
 // setTimeout(() => console.log(data), 2500);
 var rendered = 0;
 
-const countriesUnemp = function(data1, data2) {
+const countriesUni = function(data){
     console.log("hi");
     // set the dimensions and margins of the graph
-    var margin = { top: 10, right: 30, bottom: 40, left: 50 },
+    var margin = {top: 10, right: 30, bottom: 40, left: 50},
         width = 600 - margin.left - margin.right,
         height = 600 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
     var svg = d3.select("#viz")
-          .append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g")
-          .attr("transform",
-                "translate(" + margin.left + "," + margin.top + ")");
+    .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+        .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
+
+    // Parse the Data
 
     // Add X axis
     var x = d3.scaleLinear()
-        .domain([0, d3.max(data.map((d) => d["2016"]))])
-        // .domain([0, 5]) sets domain given input
+        .domain([0, d3.max(data.map((d) => d["uniCount"]))])
+        // .domain([0, 5])
         .range([ 0, width])
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
@@ -33,24 +35,24 @@ const countriesUnemp = function(data1, data2) {
               "translate(" + (width/2) + " ," +
                              (height + 40) + ")")
         .style("text-anchor", "middle")
-        .text(`Extent to which Unemployment contributes to the
+        .text(`Extent to which presence of top univiersities contributes to the
         calculation of the Happiness Score.`);
 
     // Y axis
     var y = d3.scaleLinear()
-        .domain([0, d3.max(data.map((d) => d["Happiness.Score"]))])
+    .domain([0, d3.max(data.map((d) => d["Happiness.Score"]))])
     // .domain([0, 10])
-        .range([height, 0])
+    .range([height, 0])
     // .padding(1)
     svg.append("g")
-        .call(d3.axisLeft(y));
+    .call(d3.axisLeft(y));
     svg.append("text")
         .attr("transform",
-        "translate(" + (-margin.right) + " ," +
-        (height / 2) + ")" +
-        "rotate(-90)")
-    .style("text-anchor", "middle")
-    .text("Happiness Score");
+            "translate(" + (-margin.right) + " ," +
+                            (height/2) + ")" +
+            "rotate(-90)")
+        .style("text-anchor", "middle")
+        .text("Happiness Score");
 
 
     // // Lines
@@ -71,18 +73,17 @@ const countriesUnemp = function(data1, data2) {
     .append("circle")
         .transition()
         .duration(500)
-        .attr("cx", function(d) { return x(d["2016"]); })
+        .attr("cx", function(d) { return x(d["uniCount"]); })
         .attr("cy", function(d) { return y(d["Happiness.Score"]); })
         .attr("r", "4")
         .style("fill", "#b17db5")
         .attr("stroke", "black")
 }
 
+
 const render = function(){
     if (rendered === 0){
-        countriesUnemp(data.happinessUnemployment, data);
+        countriesUni(data.happinessUni);
         rendered = 1;
-
-      // demonstrates a relationship in which unemp is 0, returns data to analyze based on happiness
     }
 }

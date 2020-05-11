@@ -9,7 +9,9 @@ data = {
     "unemployment": dataModule.unemployment,
     "universityRankings": dataModule.universityRankings,
     "happinessROL": dataModule.happinessROL,
-    "happinessTerrorism": dataModule.happinessTerrorism
+    "happinessTerrorism": dataModule.happinessTerrorism,
+    "happinessUnemployment": dataModule.happinessUnemployment,
+    "happinessUni": dataModule.happinessUni
 }
 
 app = Flask(__name__)
@@ -34,6 +36,10 @@ def happinessTerrorism():
 @app.route('/happiness-unemployment')
 def happinessUnemployment():
     return render_template('happiness-unemployment.html', data=data)
+
+@app.route('/happiness-uni')
+def happinessUni():
+    return render_template('happiness-uni.html', data=data)
 
 if __name__ == "__main__":
     app.debug = True
