@@ -117,3 +117,10 @@ MVP done :)
 
 ahmedS -- 2020-05-11 06:00
 Made one-line edit to Vishwaa's code, now definitely done
+
+ahmedS -- 2020-05-11 08:07
+Made several frontend changes across project.
+Simplified titles for visualizations, and fixed some grammatical/spelling errors
+Continuing to port stuff over from experimentation phase. 
+Deciding next steps to improve project (now that we have some extra time :) )
+Edited devlog.txt.
