@@ -1,9 +1,9 @@
 {% extends "viz-template.html" %}
 <!-- PLEASE LOOK AT viz-template.html TO UNDERSTAND WHAT IS HAPPENING -->
-{% block title %}Happiness Vs. ROL{% endblock %}
+{% block title %}Happiness vs. ROL{% endblock %}
 {% block scriptPath %}./static/js/happiness-rol.js{% endblock %}
-{% block vizTitle %}Second Visualization: Happiness Score vs. The Extent To Which ROL contributed to the Calculation of the Happiness Score{% endblock %}
-{% block description %}This visualization explores the relationship between the value placed in ROL when deciding how happy one is, and the overall percieved happiness in that country.{% endblock %}
+{% block vizTitle %}Happiness score vs. freedom by rule of law (ROL){% endblock %}
+{% block description %}This visualization explores the relationship between the perceived fairness of rule of law in each country (as determined by the Cato Institute's Human Freedom Index), and the overall percieved happiness in that country.{% endblock %}
 {% block controls %}
     <button class="btn btn-dark" onclick="renderROL()">Render Visualization</button>
 {% endblock %}

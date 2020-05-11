@@ -1,8 +1,8 @@
 {% extends "viz-template.html" %} 
 <!-- PLEASE LOOK AT viz-template.html TO UNDERSTAND WHAT IS HAPPENING -->
-{% block title %}Happiness Vs. GDP{% endblock %}
+{% block title %}Happiness vs. GDP{% endblock %}
 {% block scriptPath %}./static/js/happiness-gdp.js{% endblock %}
-{% block vizTitle %}First Visualization: Happiness Score vs. The Extent To Which GDP contributed to the Calculation of the Happiness Score{% endblock %}
+{% block vizTitle %}Happiness score vs. GDP weight in happiness score{% endblock %}
 {% block description %}This visualization explores the relationship between the value placed in GDP when deciding how happy one is, and the overall percieved happiness in that country.{% endblock %}
 {% block controls %}
     <button class="btn btn-dark" onclick="render()">Render Visualization</button>
