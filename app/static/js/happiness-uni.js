@@ -75,7 +75,7 @@ const countriesUni = function(data){
         .duration(500)
         .attr("cx", function(d) { return x(d["uniCount"]); })
         .attr("cy", function(d) { return y(d["Happiness.Score"]); })
-        .attr("r", function (d) { return x(d["uniCount"]) / 100; })
+        .attr("r", "4")
         .style("fill", "#b17db5")
         .attr("stroke", "black")
 }
