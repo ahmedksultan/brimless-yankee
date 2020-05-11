@@ -17,8 +17,6 @@ const countriesLollipop = function (data) {
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
-    // Parse the Data
-
     // Add X axis
     var x = d3.scaleLinear()
         .domain([0, 35])

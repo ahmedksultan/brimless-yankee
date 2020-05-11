@@ -17,9 +17,7 @@ const countriesUnemp = function(data) {
           .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
 
-    // Parse the Data given specific attributes
-
-    // Added X axis to portray the data
+    // Add X axis
     var x = d3.scaleLinear()
         .domain([0, d3.max(data.map((d) => d["Unemployment, total (% of total labor force) (modeled ILO estimate)"]))])
         // .domain([0, 5]) sets domain given input
@@ -74,7 +72,7 @@ const countriesUnemp = function(data) {
         .transition()
         .duration(500)
         .attr("cx", function(d) { return x(d["Unemployment, total (% of total labor force) (modeled ILO estimate)"]); })
-        .attr("cx", function(d) { return x(d["Happiness.Score"]); })
+        .attr("cy", function(d) { return y(d["Happiness.Score"]); })
         .attr("r", "4")
         .style("fill", "#b17db5")
         .attr("stroke", "black")
