@@ -99,3 +99,10 @@ ahmedS -- 2020-05-11 03:28
 Fixed Nahi's code of happiness-unemployment.js code to render the D3 visualization and actually load in the data.
 ISSUE: cx doesn't work properly, looking into that now.
 Edited devlog.txt.
+
+vishwaaS -- 2020-05-11 04:50
+Fixed Nahi's code and Ahmed's edits for the happiness v unemployment visualization (resolved ISSUE: cx doesn't work properly)
+Jumped on a call with Ahmed to explain how to modify data into a new file to work with the js file as updated by me
+Added all neccessary components to the happiness v uni visualization
+Made minor edits to all html files to make them consistent with one another
+Added buttons on index.html to showcase all visualizations
