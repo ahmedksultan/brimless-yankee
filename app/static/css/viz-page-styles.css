@@ -11,10 +11,10 @@ h3{
     text-align: center;
 }
 
-body {
+/* body { */
     /* background-color: #fff261; */
     /* background: #Fff url(./../img/pattern.png) repeat; */
-}
+/* } */
 
 .object {
     margin: auto;
@@ -44,4 +44,5 @@ a:hover{
 
 .viz-container{
     height: 750px;
+    /* width: 700px;  */
 }

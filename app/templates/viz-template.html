@@ -22,10 +22,10 @@
         <a href="/">back to home</a>
         <h1 id="title" class="viz-title">{% block vizTitle %}{% endblock %}</h1> <br>
         {% block controls %}{% endblock %}
-        <div id="viz" class="viz-container"></div>
+        <div id="viz" class="viz-container container"></div>
         
         <div id="description">{% block description %}This is a visualization{% endblock %}</div>
-        <div id="footer">
+        <div id="footer" class="my-3">
             {% block footer %}
             <hr>
             &copy; 2020, brimless-yankee :: Ahmed Sultan, Joseph Yusufov, Vishwaa Sofat and Nahi Khan

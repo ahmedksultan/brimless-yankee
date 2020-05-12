@@ -11,14 +11,20 @@
 
     <script>
         console.log(data.happinessTerrorism);
-        const dataToRender = fetch("https://res.cloudinary.com/geotargetly/raw/upload/v1579830286/data/iso_3166_country_codes.json")
+        var rendered = 0;
+        const dataToRender = {};
+        const processData = fetch("https://res.cloudinary.com/geotargetly/raw/upload/v1579830286/data/iso_3166_country_codes.json")
         .then(res => {
             return res.json();
         }).then(jsonCountryCodes => {
-            return data.happinessTerrorism.map((obj, i) => {
-                console.log(jsonCountryCodes);
+            console.log(jsonCountryCodes);
+            return data.happinessTerrorism.filter((obj, i) => {
+                return jsonCountryCodes.find((countryElement) => {
+                    return countryElement["country_name"] === obj["Country"]
+                }) != undefined;
+            }).map((obj, i) => {
                 let countryCode = jsonCountryCodes.find((countryElement) => {
-                    return countryElement["country_name"] == obj["Country"]
+                    return countryElement["country_name"] === obj["Country"]
                 })["alpha_3"];
 
                 let fillKey;
@@ -38,32 +44,64 @@
                     default:
                         fillKey = "lv5";
                         break;
-                }
-
-                return({countryCode: {"fillKey": fillKey, "Number of Incidents": obj["terrorIncidents"]}})
-            })
+/*
+                    case (obj["terrorIncidents"] < 1001):
+                        fillKey = "lv1";
+                        break;
+                    case (obj["terrorIncidents"] < 2001):
+                        fillKey = "lv2";
+                        break;
+                    case (obj["terrorIncidents"] < 3001):
+                        fillKey = "lv3";
+                        break;
+                    case (obj["terrorIncidents"] < 4001):
+                        fillKey = "lv4";
+                        break;
+                    default:
+                        fillKey = "lv5";
+                        break;
+*/
+                };
+                // let toReturn = {};
+                dataToRender[countryCode] = { "fillKey": fillKey, 
+                    "Number of Incidents": obj["terrorIncidents"] 
+                };
+                // return toReturn;
+            });
         });
 
-        var reds = d3.scaleOrdinal(d3.schemeReds[5]);
-
-        var basic_choropleth = new Datamap({
-            element: document.getElementById("viz"),
-            projection: 'mercator',
-            fills: {
-                defaultFill: "#ccc",
-                lv5: reds[4],
-                lv4: reds[3],
-                lv3: reds[2],
-                lv2: reds[1],
-                lv1: reds[0],
-            },
-            data: dataToRender
-        });
+        // var reds = d3.scaleOrdinal(d3.schemeReds[5]);
+        const render = () => {
+            if(rendered === 0){
+                processData.then(() => {
+                    var basic_choropleth = new Datamap({
+                        element: document.getElementById("viz"),
+                        projection: 'mercator',
+                         geographyConfig: {
+                            popupTemplate: function (geography, data) {
+                                return '<div class="hoverinfo"><b>' + geography.properties.name + '</b><br/>Number of Terrorist Incidents: ' +  data["Number of Incidents"] + ' '
+                            },
+                            // highlightBorderWidth: 3
+                        },
+                        fills: {
+                            defaultFill: "#ccc",
+                            lv5: '#e31a00',
+                            lv4: '#e04734',
+                            lv3: '#e36252',
+                            lv2: '#de7d71',
+                            lv1: '#e0b1ab'
+                        },
+                        data: dataToRender
+                    });
+                });
+                rendered = 1;
+            };
+        };
 
 </script>
 {% endblock %}
 {% block vizTitle %}Global Terrorism Heatmap{% endblock %}
-{% block description %}{% endblock %}
+{% block description %}Heatmap of Terrorist Incidents, 2017{% endblock %}
 <!-- {% block controls %}
 <button class="btn btn-dark" onclick="render()">Render Visualization</button>
 {% endblock %} -->
