@@ -3,12 +3,12 @@
 {% block title %}world-happiness{% endblock %}
 
 {% block scripts %}
-     <script src="./static/js/happiness-terrorism.js"></script>
+     <!-- <script src="./static/js/happiness-terrorism.js"></script> -->
 {% endblock %}
 
 {% block body %}
      <h1 style="margin-top: 0.5em;" class="display-1">Terrorism</h1>
-     <h3 class="display-5"><i>... and does it relate to happiness?</i></h3>
+     <h3 class="display-5"><i>... and how does it relate to happiness?</i></h3>
      
      <br>
 
@@ -22,40 +22,21 @@
           </p>
           <br>
      </div>
-     <!-- representing six values calculating -->
-     <div class="container">
-          <div class="row">
-               <div class="col rounded" style="background-color: #e23838">
-                    <span class="happy-title">GDP per capita</span> <br>
-                    <span class="happy-icon"><i class="fas fa-hand-holding-usd"></i></span>
-               </div>
-               <div class="col rounded" style="background-color: #ffb900">
-                    <span class="happy-title">Health</span> <br> <br> 
-                    <span class="happy-icon"><i class="fas fa-heart"></i></span>
-               </div>
-               <div class="col rounded" style="background-color: #f78200">
-                    <span class="happy-title">Family</span> <br> <br>
-                    <span class="happy-icon"><i class="fas fa-users"></i></span>
-               </div>
-               <div class="col rounded" style="background-color: #5ebd3e">
-                    <span class="happy-title">Freedom</span> <br> <br>
-                    <span class="happy-icon"><i class="fas fa-walking"></i></span>
-               </div>
-               <div class="col rounded" style="background-color: #009cdf">
-                    <span class="happy-title">Generosity</span> <br> <br>
-                    <span class="happy-icon"><i class="fas fa-hands-helping"></i></span>
-               </div>
-               <div class="col rounded" style="background-color: #973999">
-                    <span class="happy-title">Trust in government</span> <br>
-                    <span class="happy-icon"><i class="fas fa-university"></i></span>
-               </div>
-          </div>
-     </div>
 
-     <!-- GEOGRAPHICAL HEATMAP OF HAPPINESS SCORES -->
+     <!-- GEOGRAPHICAL HEATMAP OF TERRORIST INCIDENTS -->     
+     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+     <script src="./static/js/datamaps.world.min.js"></script>
+     <script src="https://res.cloudinary.com/geotargetly/raw/upload/v1579830286/data/iso_3166_country_codes.json"></script>
+     <script src="./static/js/terrorism-heatmap.js"></script>
+
+     {{ super() }}
+     <button class="btn btn-dark" onclick="render()">Render</button>
+
 
      <br>
      <!-- VIEW INDIVIDUAL SCORES HERE -->
+     <!--
      <div class="container">
           <script>
                // next line shows an error in the linter but works perfectly
@@ -82,7 +63,79 @@
      <div>
           
      </div>
+     -->
      <div class="w-50 my-5 mx-auto">
           <a href="/human-freedom" class="btn btn-warning btn-lg">&rarr; Continue</a>
      </div>
+
+     <script>
+          console.log(data.happinessTerrorism);
+          var rendered = 0;
+          const dataToRender = {};
+          const processData = fetch("https://res.cloudinary.com/geotargetly/raw/upload/v1579830286/data/iso_3166_country_codes.json")
+               .then(res => {
+                    return res.json();
+               }).then(jsonCountryCodes => {
+                    console.log(jsonCountryCodes);
+                    return data.happinessTerrorism.filter((obj, i) => {
+                         return jsonCountryCodes.find((countryElement) => {
+                              return countryElement["country_name"] === obj["Country"]
+                         }) != undefined;
+                    }).map((obj, i) => {
+                         let countryCode = jsonCountryCodes.find((countryElement) => {
+                              return countryElement["country_name"] === obj["Country"]
+                         })["alpha_3"];
+
+                         let fillKey;
+                         switch (true) {
+                              case (obj["terrorIncidents"] < 11):
+                                   fillKey = "lv1";
+                                   break;
+                              case (obj["terrorIncidents"] < 101):
+                                   fillKey = "lv2";
+                                   break;
+                              case (obj["terrorIncidents"] < 501):
+                                   fillKey = "lv3";
+                                   break;
+                              case (obj["terrorIncidents"] < 1001):
+                                   fillKey = "lv4";
+                                   break;
+                              default:
+                                   fillKey = "lv5";
+                                   break;
+                         };
+                         dataToRender[countryCode] = {
+                              "fillKey": fillKey,
+                              "Number of Incidents": obj["terrorIncidents"]
+                         };
+                    });
+               });
+
+          const render = () => {
+               if (rendered === 0) {
+                    processData.then(() => {
+                         var basic_choropleth = new Datamap({
+                              element: document.getElementById("viz"),
+                              projection: 'mercator',
+                              geographyConfig: {
+                                   popupTemplate: function (geography, data) {
+                                        return '<div class="hoverinfo"><b>' + geography.properties.name + '</b><br/>Number of Terrorist Incidents: ' + data["Number of Incidents"] + ' '
+                                   },
+                              },
+                              fills: {
+                                   defaultFill: "#ccc",
+                                   lv5: '#e31a00',
+                                   lv4: '#e04734',
+                                   lv3: '#e36252',
+                                   lv2: '#de7d71',
+                                   lv1: '#e0b1ab'
+                              },
+                              data: dataToRender
+                         });
+                    });
+                    rendered = 1;
+               };
+          };
+
+     </script>
 {% endblock %}
