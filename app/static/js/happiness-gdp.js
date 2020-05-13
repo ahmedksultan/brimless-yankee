@@ -158,7 +158,6 @@ const redraw = function(data, var1, var2) {
 }
 
 const render = function(){
-
     const viz1 = String(document.getElementById("vizSelector1").value);
     const viz2 = String(document.getElementById("vizSelector2").value);
     if (rendered === 0){

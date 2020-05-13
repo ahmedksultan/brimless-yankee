@@ -166,6 +166,6 @@ const renderROL = function(){
         rendered = 1;
     } else {
         d3.select("svg").remove();
-        redraw(data.happiness, viz1, viz2);
+        redraw(data.happinessROL, viz1, viz2);
     }
 }
