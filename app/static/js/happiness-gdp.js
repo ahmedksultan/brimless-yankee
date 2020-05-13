@@ -1,7 +1,7 @@
 // setTimeout(() => console.log(data), 2500);
 var rendered = 0;
 
-const countriesLollipop = function(data, var1, var2, var3, var4){
+const countriesLollipop = function(data, var1, var2){
     console.log("hello:", var1, ",", var2);
     // set the dimensions and margins of the graph
     var margin = {top: 10, right: 30, bottom: 40, left: 50},
@@ -35,7 +35,7 @@ const countriesLollipop = function(data, var1, var2, var3, var4){
               "translate(" + (width/2) + " ," +
                              (height + 40) + ")")
         .style("text-anchor", "middle")
-        .text(var4);
+        .text(var2);
 
     // Y axis
     var y = d3.scaleLinear()
@@ -51,7 +51,7 @@ const countriesLollipop = function(data, var1, var2, var3, var4){
                             (height/2) + ")" +
             "rotate(-90)")
         .style("text-anchor", "middle")
-        .text(var3);
+        .text(var1);
 
 
     // // Lines
@@ -79,7 +79,7 @@ const countriesLollipop = function(data, var1, var2, var3, var4){
         .attr("stroke", "black")
 }
 
-const redraw = function(data, var1, var2, var3, var4) {
+const redraw = function(data, var1, var2) {
     console.log("hello:", var1, ",", var2);
     // set the dimensions and margins of the graph
     var margin = { top: 10, right: 30, bottom: 40, left: 50 },
@@ -113,7 +113,7 @@ const redraw = function(data, var1, var2, var3, var4) {
             "translate(" + (width / 2) + " ," +
             (height + 40) + ")")
         .style("text-anchor", "middle")
-        .text( var4 );
+        .text(var2);
 
     // Y axis
     var y = d3.scaleLinear()
@@ -129,7 +129,7 @@ const redraw = function(data, var1, var2, var3, var4) {
             (height / 2) + ")" +
             "rotate(-90)")
         .style("text-anchor", "middle")
-        .text(var3);
+        .text(var1);
 
 
     // // Lines
@@ -160,9 +160,7 @@ const redraw = function(data, var1, var2, var3, var4) {
 const render = function(){
 
     const viz1 = String(document.getElementById("vizSelector1").value);
-    const name1 = String(document.getElementById("vizSelector1").title);
     const viz2 = String(document.getElementById("vizSelector2").value);
-    const name2 = String(document.getElementById("vizSelector2").title);
     if (rendered === 0){
         countriesLollipop(data.happiness, viz1, viz2, name1, name2);
         rendered = 1;
