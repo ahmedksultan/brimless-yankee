@@ -1,33 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>world happiness</title>
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-     <link rel="stylesheet" href="/static/css/styles.css">
-</head>
-<body>
-     <div class="my-5">
-          <h1 style="margin-top: 1.25em;" class="display-1">world-happiness</h1>
-          <h3 class="display-5">by brimless-yankee</h3>
-          <br>
-          <div class="w-50 mx-auto">
-               <p class="text-center">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id erat consequat, posuere nisl
-                    nec, condimentum urna.
-                    Donec quis malesuada tortor, ac bibendum augue. Vivamus ullamcorper, urna vel iaculis tempus, urna
-                    diam dictum ante, sed
-                    hendrerit ipsum lectus ut metus. Aenean pulvinar, dolor a mollis vehicula, ex enim placerat erat,
-                    eget tristique justo
-                    purus a magna.
-               </p>
-          </div>
-          <br>
-          <!-- explanation of happiness score -->
-          <a href="/happiness" class="btn btn-light btn-lg">&rarr; Go</a>
-     </div>
-</body>
+{% extends "new-template.html" %}
 
-</html>
+{% block title %}world-happiness{% endblock %}
+{% block body %}
+     <h1 style="margin-top: 0.5em;" class="display-1">What is happiness?</h1>
+     <h3 class="display-5"><i>(or, at least, how is it calculated here?)</i></h3>
+     
+     <br>
+
+     <div class="w-50 mx-auto">
+          <!-- introduction -->
+          <p class="text-justify">
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id erat consequat, posuere nisl
+               nec, condimentum urna. Donec quis malesuada tortor, ac bibendum augue. Vivamus ullamcorper, urna vel iaculis tempus, urna
+               diam dictum ante, sed hendrerit ipsum lectus ut metus. Aenean pulvinar, dolor a mollis vehicula, ex enim placerat erat, 
+               eget tristique justo purus a magna.
+          </p>
+          <br>
+     </div>
+     <!-- representing six values calculating -->
+     <div class="container">
+          <div class="row">
+               <div class="col rounded" style="background-color: #e23838">
+                    <span class="happy-title">GDP per capita</span> <br>
+                    <span class="happy-icon"><i class="fas fa-hand-holding-usd"></i></span>
+               </div>
+               <div class="col rounded" style="background-color: #ffb900">
+                    <span class="happy-title">Health</span> <br> <br> 
+                    <span class="happy-icon"><i class="fas fa-heart"></i></span>
+               </div>
+               <div class="col rounded" style="background-color: #f78200">
+                    <span class="happy-title">Family</span> <br> <br>
+                    <span class="happy-icon"><i class="fas fa-users"></i></span>
+               </div>
+               <div class="col rounded" style="background-color: #5ebd3e">
+                    <span class="happy-title">Freedom</span> <br> <br>
+                    <span class="happy-icon"><i class="fas fa-walking"></i></span>
+               </div>
+               <div class="col rounded" style="background-color: #009cdf">
+                    <span class="happy-title">Generosity</span> <br> <br>
+                    <span class="happy-icon"><i class="fas fa-hands-helping"></i></span>
+               </div>
+               <div class="col rounded" style="background-color: #973999">
+                    <span class="happy-title">Trust in government</span> <br>
+                    <span class="happy-icon"><i class="fas fa-university"></i></span>
+               </div>
+          </div>
+     </div>
+
+     <!-- HEATMAP OF HAPPINESS SCORES (2016) -->
+
+     <!-- VIEW INDIVIDUAL SCORES HERE -->
+     <br>
+     <div class="w-50 mx-auto">
+          <a href="/human-freedom" class="btn btn-warning btn-lg">&rarr; Continue</a>
+     </div>
+
+{% endblock %}
