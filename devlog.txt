@@ -133,6 +133,6 @@ Made changes to happiness v gdp visualization to adjust html and js files to all
 Got on a call with Ahmed and Joseph to troubleshoot some difficulty I was having
 Dropdown works successfully and svg updates successfully
 
-vishwaaS -- 2020-05-13 1:30
-Added dropdown for happiness v terrorism page allows for more visualizations to take place
-Working on making the axis change more dynamic 
+vishwaaS -- 2020-05-13 2:00
+Added dropdown for happiness v terrorism page such that JS/HTML allows for more visualizations to take place
+Chanes to axis name made more dynamic
