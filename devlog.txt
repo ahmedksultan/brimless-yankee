@@ -111,7 +111,7 @@ ahmedS -- 2020-05-11 05:41
 Fixed data for unemployment, calling with Vishwaa to finalize the visualization for unemployment.
 Updated devlog.txt.
 
-vishwaaS -- 2020-05-11 05:59
+ahmedS -- 2020-05-11 08:07
 Made minor edits to get happiness v unemployment js working once Ahmed had the data modified as per my request
 MVP done :)
 
@@ -121,9 +121,14 @@ Made one-line edit to Vishwaa's code, now definitely done
 ahmedS -- 2020-05-11 08:07
 Made several frontend changes across project.
 Simplified titles for visualizations, and fixed some grammatical/spelling errors
-Continuing to port stuff over from experimentation phase. 
+Continuing to port stuff over from experimentation phase.
 Deciding next steps to improve project (now that we have some extra time :) )
 Edited devlog.txt.
 
 josephY -- 2020-05-11 14:30
 started making a heatmap, making steady progress.
+
+vishwaaS -- 2020-05-11 12:45
+Made changes to happiness v gdp visualization to adjust html and js files to allow for more visualizations through a dropdown
+Got on a call with Ahmed and Joseph to troubleshoot some difficulty I was having
+Dropdown works successfully and svg updates successfully
