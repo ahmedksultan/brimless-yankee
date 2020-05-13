@@ -32,6 +32,10 @@ def happiness():
 def terrorism():
     return render_template('terrorism.html', data=data)
 
+@app.route('/terrorism2')
+def terrorism2():
+    return render_template('terrorism2.html', data=data)
+
 # human freedom index analysis, visualizations
 @app.route('/freedom')
 def freedom():

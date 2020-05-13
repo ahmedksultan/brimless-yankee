@@ -2,11 +2,14 @@
 
 {% block title %}world-happiness{% endblock %}
 
-{% block scripts %}
-     <!-- <script src="./static/js/happiness-terrorism.js"></script> -->
-{% endblock %}
+{% block scripts %}{% endblock %}
 
 {% block body %}
+     <script>
+          // next line shows an error in the linter but works perfectly
+          var data = {{ data | tojson }};
+     </script>
+
      <h1 style="margin-top: 0.5em;" class="display-1">Terrorism</h1>
      <h3 class="display-5"><i>... and how does it relate to happiness?</i></h3>
      
@@ -23,60 +26,25 @@
           <br>
      </div>
 
-     <!-- GEOGRAPHICAL HEATMAP OF TERRORIST INCIDENTS -->     
+     <!-- GEOGRAPHICAL HEATMAP OF TERRORIST INCIDENTS -->
+     <h3 class="display-5">Geographical heatmap, concentration of terrorist incidents</h3>
+     <br>
+
      <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
      <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
      <script src="./static/js/datamaps.world.min.js"></script>
      <script src="https://res.cloudinary.com/geotargetly/raw/upload/v1579830286/data/iso_3166_country_codes.json"></script>
-     <script src="./static/js/terrorism-heatmap.js"></script>
 
      {{ super() }}
-     <button class="btn btn-dark" onclick="render()">Render</button>
-
-
-     <br>
-     <!-- VIEW INDIVIDUAL SCORES HERE -->
-     <!--
-     <div class="container">
-          <script>
-               // next line shows an error in the linter but works perfectly
-               var data = {{ data | tojson }};
-          </script>
-
-          <h3 class="display-5">Weight of individual indicators on happiness score</h3>
-     
-          <br>
-          <form class="vizSelection" method="">
-               <select class="vizForm2" id="vizSelector2" type="text" name="vizDropdown2" placeholder="Select One">
-                    <option disabled selected>Select an option</option>
-                    <option title="GDP" value="GDP">GDP</option>
-                    <option title="Health" value="Health">Health</option>
-                    <option title="Family" value="Family">Family</option>
-                    <option title="Freedom" value="Freedom">Freedom</option>
-                    <option title="Generosity" value="Generosity">Generosity</option>
-                    <option title="Trust in Government" value="Trust in Government">Trust in Government</option>
-               </select> <span>&emsp;</span>
-               <input type="button" class="btn btn-warning" value="Render visualization" onclick="render()">
-          </form>
-          <div id="viz" class="viz-container container"></div>
-     </div>
-     <div>
-          
-     </div>
-     -->
-     <div class="w-50 my-5 mx-auto">
-          <a href="/human-freedom" class="btn btn-warning btn-lg">&rarr; Continue</a>
-     </div>
+     <div id="viz" class="viz-container container"></div>
 
      <script>
-          console.log(data.happinessTerrorism);
           var rendered = 0;
           const dataToRender = {};
           const processData = fetch("https://res.cloudinary.com/geotargetly/raw/upload/v1579830286/data/iso_3166_country_codes.json")
                .then(res => {
                     return res.json();
                }).then(jsonCountryCodes => {
-                    console.log(jsonCountryCodes);
                     return data.happinessTerrorism.filter((obj, i) => {
                          return jsonCountryCodes.find((countryElement) => {
                               return countryElement["country_name"] === obj["Country"]
@@ -88,25 +56,24 @@
 
                          let fillKey;
                          switch (true) {
-                              case (obj["terrorIncidents"] < 11):
+                              case (obj["Terror Incidents"] < 11):
                                    fillKey = "lv1";
                                    break;
-                              case (obj["terrorIncidents"] < 101):
+                              case (obj["Terror Incidents"] < 101):
                                    fillKey = "lv2";
                                    break;
-                              case (obj["terrorIncidents"] < 501):
+                              case (obj["Terror Incidents"] < 501):
                                    fillKey = "lv3";
                                    break;
-                              case (obj["terrorIncidents"] < 1001):
+                              case (obj["Terror Incidents"] < 1001):
                                    fillKey = "lv4";
                                    break;
                               default:
-                                   fillKey = "lv5";
                                    break;
                          };
                          dataToRender[countryCode] = {
                               "fillKey": fillKey,
-                              "Number of Incidents": obj["terrorIncidents"]
+                              "Number of Incidents": obj["Terror Incidents"]
                          };
                     });
                });
@@ -136,6 +103,13 @@
                     rendered = 1;
                };
           };
-
+          window.onload = render();
      </script>
+
+     <br>
+
+     <div class="w-50 my-5 mx-auto">
+          <a href="/terrorism2" class="btn btn-warning btn-lg">&rarr; Continue</a>
+     </div>
+
 {% endblock %}
