@@ -144,3 +144,6 @@ Added dropdown for happiness v ROL page such that JS/HTML allows for more visual
 
 vishwaaS -- 2020-05-13 3:15
 Added dropdown for happiness v unemployment page such that JS/HTML allows for more visualizations to take place
+
+vishwaaS -- 2020-05-13 3:30
+Added dropdown for happiness v university page such that JS/HTML allows for more visualizations to take place
