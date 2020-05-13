@@ -21,7 +21,7 @@ const countriesLollipop = function(data){
 
     // Add X axis
     var x = d3.scaleLinear()
-        .domain([0, d3.max(data.map((d) => d["Economy..GDP.per.Capita."]))])
+        .domain([0, d3.max(data.map((d) => d[String(document.getElementById("vizSelector2").value)]))])
         // .domain([0, 5])
         .range([ 0, width])
     svg.append("g")
@@ -30,29 +30,29 @@ const countriesLollipop = function(data){
         .selectAll("text")
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
-    svg.append("text")             
+    svg.append("text")
         .attr("transform",
-              "translate(" + (width/2) + " ," + 
+              "translate(" + (width/2) + " ," +
                              (height + 40) + ")")
         .style("text-anchor", "middle")
-        .text(`Extent to which GDP contributes to the 
-        calculation of the Happiness Score.`);        
+        .text(`Extent to which GDP contributes to the
+        calculation of the Happiness Score.`);
 
     // Y axis
     var y = d3.scaleLinear()
-    .domain([0, d3.max(data.map((d) => d["Happiness.Score"]))])
+    .domain([0, d3.max(data.map((d) => d[String(document.getElementById("vizSelector1").value])))])
     // .domain([0, 10])
     .range([height, 0])
     // .padding(1)
     svg.append("g")
     .call(d3.axisLeft(y));
-    svg.append("text")             
+    svg.append("text")
         .attr("transform",
-            "translate(" + (-margin.right) + " ," + 
-                            (height/2) + ")" + 
+            "translate(" + (-margin.right) + " ," +
+                            (height/2) + ")" +
             "rotate(-90)")
         .style("text-anchor", "middle")
-        .text("Happiness Score");        
+        .text("Happiness Score");
 
 
     // // Lines
@@ -73,8 +73,8 @@ const countriesLollipop = function(data){
     .append("circle")
         .transition()
         .duration(500)
-        .attr("cx", function(d) { return x(d["Economy..GDP.per.Capita."]); })
-        .attr("cy", function(d) { return y(d["Happiness.Score"]); })
+        .attr("cx", function(d) { return x(d[String(document.getElementById("vizSelector2").value)]); })
+        .attr("cy", function(d) { return y(d[String(document.getElementById("vizSelector1").value)]); })
         .attr("r", "4")
         .style("fill", "#b17db5")
         .attr("stroke", "black")
@@ -82,8 +82,8 @@ const countriesLollipop = function(data){
 
 
 const render = function(){
-    if (rendered === 0){
-        countriesLollipop(data.happiness);
+  if (rendered === 0){
+      countriesLollipop(data.happiness, document.getElementById("vizSelector1").value, document.getElementById("vizSelector2").value);
         rendered = 1;
     }
 }
