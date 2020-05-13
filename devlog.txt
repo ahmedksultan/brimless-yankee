@@ -168,3 +168,7 @@ ahmedS -- 2020-05-13 05:39
 Edited __init__.py to include new routes: /terrorism & /freedom, to better reflect the narrative organization.
 Added new template .html files, terrorism.html and freedom.html, to match routes.
 Will continue working, TODO: edit design document with appropriate changes later today.
+
+ahmedS -- 2020-05-13 05:45
+Copied over HTML from happiness.html to terrorism.html.
+Fixed routes in __init__.py to include the /.
