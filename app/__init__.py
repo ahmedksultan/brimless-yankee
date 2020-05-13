@@ -28,12 +28,12 @@ def happiness():
     return render_template('happiness.html', data=data)
 
 # global terrorism database analysis, visualizations
-@app.route('terrorism')
+@app.route('/terrorism')
 def terrorism():
     return render_template('terrorism.html', data=data)
 
 # human freedom index analysis, visualizations
-@app.route('freedom')
+@app.route('/freedom')
 def freedom():
     return render_template('freedom.html', data=data)
 
