@@ -1,0 +1,90 @@
+{% extends "new-template.html" %}
+
+{% block title %}world-happiness{% endblock %}
+
+{% block scripts %}
+<script src="./static/js/happiness-terrorism.js"></script>
+{% endblock %}
+
+{% block body %}
+<h1 style="margin-top: 0.5em;" class="display-1">Terrorism</h1>
+<h3 class="display-5"><i>... and does it relate to happiness?</i></h3>
+
+<br>
+
+<div class="w-50 mx-auto">
+     <!-- introduction -->
+     <p class="text-justify">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id erat consequat, posuere nisl
+          nec, condimentum urna. Donec quis malesuada tortor, ac bibendum augue. Vivamus ullamcorper, urna vel iaculis
+          tempus, urna
+          diam dictum ante, sed hendrerit ipsum lectus ut metus. Aenean pulvinar, dolor a mollis vehicula, ex enim
+          placerat erat,
+          eget tristique justo purus a magna.
+     </p>
+     <br>
+</div>
+<!-- representing six values calculating -->
+<div class="container">
+     <div class="row">
+          <div class="col rounded" style="background-color: #e23838">
+               <span class="happy-title">GDP per capita</span> <br>
+               <span class="happy-icon"><i class="fas fa-hand-holding-usd"></i></span>
+          </div>
+          <div class="col rounded" style="background-color: #ffb900">
+               <span class="happy-title">Health</span> <br> <br>
+               <span class="happy-icon"><i class="fas fa-heart"></i></span>
+          </div>
+          <div class="col rounded" style="background-color: #f78200">
+               <span class="happy-title">Family</span> <br> <br>
+               <span class="happy-icon"><i class="fas fa-users"></i></span>
+          </div>
+          <div class="col rounded" style="background-color: #5ebd3e">
+               <span class="happy-title">Freedom</span> <br> <br>
+               <span class="happy-icon"><i class="fas fa-walking"></i></span>
+          </div>
+          <div class="col rounded" style="background-color: #009cdf">
+               <span class="happy-title">Generosity</span> <br> <br>
+               <span class="happy-icon"><i class="fas fa-hands-helping"></i></span>
+          </div>
+          <div class="col rounded" style="background-color: #973999">
+               <span class="happy-title">Trust in government</span> <br>
+               <span class="happy-icon"><i class="fas fa-university"></i></span>
+          </div>
+     </div>
+</div>
+
+<!-- GEOGRAPHICAL HEATMAP OF HAPPINESS SCORES -->
+
+<br>
+<!-- VIEW INDIVIDUAL SCORES HERE -->
+<div class="container">
+     <script>
+          // next line shows an error in the linter but works perfectly
+          var data = {{ data | tojson }};
+     </script>
+
+     <h3 class="display-5">Weight of individual indicators on happiness score</h3>
+
+     <br>
+     <form class="vizSelection" method="">
+          <select class="vizForm2" id="vizSelector2" type="text" name="vizDropdown2" placeholder="Select One">
+               <option disabled selected>Select an option</option>
+               <option title="GDP" value="GDP">GDP</option>
+               <option title="Health" value="Health">Health</option>
+               <option title="Family" value="Family">Family</option>
+               <option title="Freedom" value="Freedom">Freedom</option>
+               <option title="Generosity" value="Generosity">Generosity</option>
+               <option title="Trust in Government" value="Trust in Government">Trust in Government</option>
+          </select> <span>&emsp;</span>
+          <input type="button" class="btn btn-warning" value="Render visualization" onclick="render()">
+     </form>
+     <div id="viz" class="viz-container container"></div>
+</div>
+<div>
+
+</div>
+<div class="w-50 my-5 mx-auto">
+     <a href="/human-freedom" class="btn btn-warning btn-lg">&rarr; Continue</a>
+</div>
+{% endblock %}

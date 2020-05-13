@@ -133,17 +133,50 @@ Made changes to happiness v gdp visualization to adjust html and js files to all
 Got on a call with Ahmed and Joseph to troubleshoot some difficulty I was having
 Dropdown works successfully and svg updates successfully
 
-vishwaaS -- 2020-05-13 2:00
+ahmedS -- 2020-05-13 01:20
+Working with Vishwaa to fix happiness v. X visualizations with the dropdowns.
+Contiuing to work on the 'narrative' view, updated index.html.
+
+vishwaaS -- 2020-05-13 02:00
 Added dropdown for happiness v terrorism page such that JS/HTML allows for more visualizations to take place
 Modified data for happiness, happiness-terrorism to work with updated JS
 Chanes to axis name made more dynamic
 
-vishwaaS -- 2020-05-13 2:50
+vishwaaS -- 2020-05-13 02:50
 Modified data for happiness-ROL to work with updated JS
 Added dropdown for happiness v ROL page such that JS/HTML allows for more visualizations to take place
 
-vishwaaS -- 2020-05-13 3:15
+vishwaaS -- 2020-05-13 03:15
 Added dropdown for happiness v unemployment page such that JS/HTML allows for more visualizations to take place
+
+ahmedS -- 2020-05-13 03:25
+Continuing to work on updating the 'narrative' view.
+Created new template, updated styling, created happiness.html and updated index.html.
 
 vishwaaS -- 2020-05-13 3:30
 Added dropdown for happiness v university page such that JS/HTML allows for more visualizations to take place
+
+ahmedS -- 2020-05-13 03:45
+Got the loading of D3 visualizations in the new view working.
+Edited new-template to include d3 and script-loading functionality.
+Edited styles.css to reflect changes.
+Renamed functions with happiness-gdp.js to be simpler/more understandable.
+Edited __init__.py to pass the data.py module through Jinja on route /happiness.
+
+ahmedS -- 2020-05-13 04:20
+Scatterplots of happiness-score data fully working.
+Edited happiness.html to reflect changes.
+
+ahmedS -- 2020-05-13 05:39
+Edited __init__.py to include new routes: /terrorism & /freedom, to better reflect the narrative organization.
+Added new template .html files, terrorism.html and freedom.html, to match routes.
+Will continue working, TODO: edit design document with appropriate changes later today.
+
+ahmedS -- 2020-05-13 05:45
+Copied over HTML from happiness.html to terrorism.html.
+Fixed routes in __init__.py to include the /.
+
+ahmedS -- 2020-05-13 05:54
+Copied over HTML from happiness.html to freedom.html.
+Edited button in happiness.html to move to /terrorism, instead of /freedom.
+Updated devlog to reflect recent changes.
