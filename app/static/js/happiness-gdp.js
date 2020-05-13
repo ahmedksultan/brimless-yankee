@@ -160,9 +160,9 @@ const redraw = function(data, var1, var2, var3, var4) {
 const render = function(){
 
     const viz1 = String(document.getElementById("vizSelector1").value);
-    const name1 = String(document.getElementById("vizSelector1").type);
+    const name1 = String(document.getElementById("vizSelector1").title);
     const viz2 = String(document.getElementById("vizSelector2").value);
-    const name2 = String(document.getElementById("vizSelector2").type);
+    const name2 = String(document.getElementById("vizSelector2").title);
     if (rendered === 0){
         countriesLollipop(data.happiness, viz1, viz2, name1, name2);
         rendered = 1;
