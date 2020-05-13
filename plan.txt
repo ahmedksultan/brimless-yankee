@@ -1,0 +1,13 @@
+page 1 opening page (what is the world hpapiness database? what metrics)
+page 2 gdp (gdp, extra visualizations ... )
+page 3 rol (rol, extra visualizations ... )
+
+<select onchange="location=this.options[this.selectedIndex].value;">
+            <option>Please select</option>
+            <option value="/happiness-gdp">GDP</option>
+            <option value="/happiness-rol">ROL</option>
+            <option value="/happiness-terrorism">Terrorism</option>
+            <option value="/happiness-unemployment">Unemployment</option>
+            <option value="/happiness-uni">Universities</option>
+            <option value="/terrorism-heatmap">Terrorist2</option>
+</select>​
