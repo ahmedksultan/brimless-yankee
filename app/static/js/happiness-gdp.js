@@ -1,7 +1,7 @@
 // setTimeout(() => console.log(data), 2500);
 var rendered = 0;
 
-const countriesLollipop = function(data, var1, var2){
+const draw = function(data, var1, var2){
     console.log("hello:", var1, ",", var2);
     // set the dimensions and margins of the graph
     var margin = {top: 10, right: 30, bottom: 40, left: 50},
@@ -161,7 +161,7 @@ const render = function(){
     const viz1 = String(document.getElementById("vizSelector1").value);
     const viz2 = String(document.getElementById("vizSelector2").value);
     if (rendered === 0){
-        countriesLollipop(data.happiness, viz1, viz2);
+        draw(data.happiness, viz1, viz2);
         rendered = 1;
     } else {
         d3.select("svg").remove();

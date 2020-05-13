@@ -152,3 +152,10 @@ Added dropdown for happiness v unemployment page such that JS/HTML allows for mo
 ahmedS -- 2020-05-13 03:25
 Continuing to work on updating the 'narrative' view.
 Created new template, updated styling, created happiness.html and updated index.html.
+
+ahmedS -- 2020-05-13 03:45
+Got the loading of D3 visualizations in the new view working.
+Edited new-template to include d3 and script-loading functionality.
+Edited styles.css to reflect changes.
+Renamed functions with happiness-gdp.js to be simpler/more understandable.
+Edited __init__.py to pass the data.py module through Jinja on route /happiness.

@@ -51,7 +51,7 @@ def universityHeatmap():
 
 @app.route('/happiness')
 def happiness():
-    return render_template('happiness.html')
+    return render_template('happiness.html', data=data)
 
 if __name__ == "__main__":
     app.debug = True
