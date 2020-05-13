@@ -1,7 +1,7 @@
 // setTimeout(() => console.log(data), 2500);
 var rendered = 0;
 
-const countriesLollipop = function(data, var1, var2){
+const countriesLollipop = function(data, var1, var2, var3, var4){
     console.log("hello:", var1, ",", var2);
     // set the dimensions and margins of the graph
     var margin = {top: 10, right: 30, bottom: 40, left: 50},
@@ -35,8 +35,7 @@ const countriesLollipop = function(data, var1, var2){
               "translate(" + (width/2) + " ," +
                              (height + 40) + ")")
         .style("text-anchor", "middle")
-        .text(`Extent to which` + var1 + ` contributes to the
-        calculation of the Happiness Score.`);
+        .text(var4);
 
     // Y axis
     var y = d3.scaleLinear()
@@ -52,7 +51,7 @@ const countriesLollipop = function(data, var1, var2){
                             (height/2) + ")" +
             "rotate(-90)")
         .style("text-anchor", "middle")
-        .text("Happiness Score");
+        .text(var3);
 
 
     // // Lines
@@ -80,7 +79,7 @@ const countriesLollipop = function(data, var1, var2){
         .attr("stroke", "black")
 }
 
-const redraw = function(data, var1, var2) {
+const redraw = function(data, var1, var2, var3, var4) {
     console.log("hello:", var1, ",", var2);
     // set the dimensions and margins of the graph
     var margin = { top: 10, right: 30, bottom: 40, left: 50 },
@@ -114,8 +113,7 @@ const redraw = function(data, var1, var2) {
             "translate(" + (width / 2) + " ," +
             (height + 40) + ")")
         .style("text-anchor", "middle")
-        .text(`Extent to which` + var1 + ` contributes to the
-        calculation of the Happiness Score.`);
+        .text( var4 );
 
     // Y axis
     var y = d3.scaleLinear()
@@ -131,7 +129,7 @@ const redraw = function(data, var1, var2) {
             (height / 2) + ")" +
             "rotate(-90)")
         .style("text-anchor", "middle")
-        .text("Happiness Score");
+        .text(var3);
 
 
     // // Lines
@@ -160,13 +158,16 @@ const redraw = function(data, var1, var2) {
 }
 
 const render = function(){
-    const viz2 = String(document.getElementById("vizSelector2").value);
+
     const viz1 = String(document.getElementById("vizSelector1").value);
+    const name1 = String(document.getElementById("vizSelector1").id);
+    const viz2 = String(document.getElementById("vizSelector2").value);
+    const name2 = String(document.getElementById("vizSelector2").id);
     if (rendered === 0){
-        countriesLollipop(data.happiness, viz1, viz2);
+        countriesLollipop(data.happiness, viz1, viz2, name1, name2);
         rendered = 1;
     } else {
         d3.select("svg").remove();
-        redraw(data.happiness, viz1, viz2);
+        redraw(data.happiness, viz1, viz2, name1, name2);
     }
 }
