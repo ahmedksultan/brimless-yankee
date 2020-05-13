@@ -3,22 +3,25 @@
 {% block title %}Happiness vs. GDP{% endblock %}
 {% block scriptPath %}./static/js/happiness-gdp.js{% endblock %}
 {% block drop %}
-<form class="vizSelection" method= onsubmit="render()">
+<form class="vizSelection" method="" >
    <select class="vizForm1" id="vizSelector1" type="text" name="vizDropdown1" placeholder="Select One">
         <option id="Happiness.Score" value="Happiness.Score">Happiness Score</option>
    </select>
    <select class="vizForm2" id="vizSelector2" type="text" name="vizDropdown2" placeholder="Select One" >
         <option disabled selected>Select an option</option>
-        <option id="Economy..GDP.per.Capita." value="Economy..GDP.per.Capita.">GDP</option>
-        <option id="Economy..GDP.per.Capita." value="Economy..GDP.per.Capita.">ahah</option>
-        <option id="Economy..GDP.per.Capita." value="Economy..GDP.per.Capita.">whwhw</option>
+        <option id="GDP" value="Economy..GDP.per.Capita.">GDP</option>
+        <option id="Health" value="Health..Life.Expectancy.">Health</option>
+        <option id="Family" value="Family">Family</option>
+        <option id="Freedom" value="Freedom">Freedom</option>
+        <option id="Generosity" value="Generosity">Generosity</option>
+        <option id="Trust in Government" value="Trust..Government.Corruption.">Trust in Government</option>
    </select>
-   <input class="btn" type="submit" value="submit">
+   <input class="btn" type="button" value="submit" onclick="render()">
 </form>
 {% endblock %}
-<!-- {% block vizTitle %}Happiness score vs. GDP weight in happiness score{% endblock %}
-{% block description %}This visualization explores the relationship between the value placed in GDP when deciding how happy one is, and the overall percieved happiness in that country.{% endblock %} -->
+<!-- {% block vizTitle %}Happiness score vs. GDP weight in happiness score{% endblock %} -->
+<!-- {% block description %}This visualization explores the relationship between the value placed in GDP when deciding how happy one is, and the overall percieved happiness in that country.{% endblock %} -->
 <!-- {% block controls %}
     <button class="btn btn-dark" onclick="render()">Render Visualization</button>
 {% endblock %} -->
-The div containing the visualization is in viz-template.html
+<!-- The div containing the visualization is in viz-template.html -->

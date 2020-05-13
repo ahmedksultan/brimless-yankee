@@ -1,8 +1,8 @@
 // setTimeout(() => console.log(data), 2500);
 var rendered = 0;
 
-const countriesLollipop = function(data){
-    console.log("hi");
+const countriesLollipop = function(data, var1, var2){
+    console.log("hello:" var1 "," var2);
     // set the dimensions and margins of the graph
     var margin = {top: 10, right: 30, bottom: 40, left: 50},
         width = 600 - margin.left - margin.right,
@@ -21,7 +21,7 @@ const countriesLollipop = function(data){
 
     // Add X axis
     var x = d3.scaleLinear()
-        .domain([0, d3.max(data.map((d) => d[String(document.getElementById("vizSelector2").value)]))])
+        .domain([0, d3.max(data.map((d) => d[var2]))])
         // .domain([0, 5])
         .range([ 0, width])
     svg.append("g")
@@ -35,12 +35,12 @@ const countriesLollipop = function(data){
               "translate(" + (width/2) + " ," +
                              (height + 40) + ")")
         .style("text-anchor", "middle")
-        .text(`Extent to which GDP contributes to the
+        .text(`Extent to which` + var1 + ` contributes to the
         calculation of the Happiness Score.`);
 
     // Y axis
     var y = d3.scaleLinear()
-    .domain([0, d3.max(data.map((d) => d[String(document.getElementById("vizSelector1").value])))])
+    .domain([0, d3.max(data.map((d) => d[var1])))])
     // .domain([0, 10])
     .range([height, 0])
     // .padding(1)
@@ -73,8 +73,8 @@ const countriesLollipop = function(data){
     .append("circle")
         .transition()
         .duration(500)
-        .attr("cx", function(d) { return x(d[String(document.getElementById("vizSelector2").value)]); })
-        .attr("cy", function(d) { return y(d[String(document.getElementById("vizSelector1").value)]); })
+        .attr("cx", function(d) { return x(d[var1]); })
+        .attr("cy", function(d) { return y(d[var2]); })
         .attr("r", "4")
         .style("fill", "#b17db5")
         .attr("stroke", "black")
@@ -82,8 +82,13 @@ const countriesLollipop = function(data){
 
 
 const render = function(){
+  rendered = 0;
   if (rendered === 0){
-      countriesLollipop(data.happiness, document.getElementById("vizSelector1").value, document.getElementById("vizSelector2").value);
+      const viz2 = String(document.getElementById("vizSelector2").value);
+      console.log(viz2);
+      const viz1 = String(document.getElementById("vizSelector1").value);
+      console.log(viz1);
+      countriesLollipop(data.happiness, viz1, viz2);
         rendered = 1;
     }
 }
