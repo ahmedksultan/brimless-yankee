@@ -135,4 +135,9 @@ Dropdown works successfully and svg updates successfully
 
 vishwaaS -- 2020-05-13 2:00
 Added dropdown for happiness v terrorism page such that JS/HTML allows for more visualizations to take place
+Modified data for happiness, happiness-terrorism to work with updated JS
 Chanes to axis name made more dynamic
+
+vishwaaS -- 2020-05-13 2:50
+Modified data for happiness-ROL to work with updated JS
+Added dropdown for happiness v ROL page such that JS/HTML allows for more visualizations to take place

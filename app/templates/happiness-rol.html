@@ -2,9 +2,27 @@
 <!-- PLEASE LOOK AT viz-template.html TO UNDERSTAND WHAT IS HAPPENING -->
 {% block title %}Happiness vs. ROL{% endblock %}
 {% block scriptPath %}./static/js/happiness-rol.js{% endblock %}
+{% block drop %}
+<form class="vizSelection" method="" >
+   <select class="vizForm1" id="vizSelector1" type="text" name="vizDropdown1" placeholder="Select One">
+        <option title="Terrorism Count" value="Terrorism Count">Terrorism Count</option>
+   </select>
+   <select class="vizForm2" id="vizSelector2" type="text" name="vizDropdown2" placeholder="Select One" >
+        <option disabled selected>Select an option</option>
+        <option title="Happiness Score" value="Happiness Score">Happiness Score</option>
+        <option title="Happiness Rank" value="Happiness Rank">Happiness Score Rank</option>
+        <option title="GDP" value="GDP">GDP</option>
+        <option title="Health" value="Health">Health</option>
+        <option title="Family" value="Family">Family</option>
+        <option title="Freedom" value="Freedom">Freedom</option>
+        <option title="Generosity" value="Generosity">Generosity</option>
+        <option title="Trust in Government" value="Trust in Government">Trust in Government</option>
+   </select>
+   <input class="btn" type="button" value="submit" onclick="render()">
+</form>
+{% endblock %}
 {% block vizTitle %}Happiness score vs. freedom by rule of law (ROL){% endblock %}
 {% block description %}This visualization explores the relationship between the perceived fairness of rule of law in each country (as determined by the Cato Institute's Human Freedom Index), and the overall percieved happiness in that country.{% endblock %}
 {% block controls %}
-    <button class="btn btn-dark" onclick="renderROL()">Render Visualization</button>
 {% endblock %}
 <!-- The div containing the visualization is in viz-template.html -->
