@@ -21,19 +21,3 @@ body {
 .object {
     margin: auto;
 }
-
-.display-1{
-    color: black;
-}
-.display-4{
-    color: black;
-}
-
-.btn{
-    background-color: black;
-    border-color: black;
-}
-.btn:hover{
-    background-color: #b17db5;
-    border-color: #ddb4e0;
-}

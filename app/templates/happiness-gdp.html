@@ -1,10 +1,24 @@
-{% extends "viz-template.html" %} 
+{% extends "viz-template.html" %}
 <!-- PLEASE LOOK AT viz-template.html TO UNDERSTAND WHAT IS HAPPENING -->
 {% block title %}Happiness vs. GDP{% endblock %}
 {% block scriptPath %}./static/js/happiness-gdp.js{% endblock %}
-{% block vizTitle %}Happiness score vs. GDP weight in happiness score{% endblock %}
-{% block description %}This visualization explores the relationship between the value placed in GDP when deciding how happy one is, and the overall percieved happiness in that country.{% endblock %}
-{% block controls %}
-    <button class="btn btn-dark" onclick="render()">Render Visualization</button>
+{% block drop %}
+<form class="vizSelection" method="" onsubmit="render()">
+   <select class="vizForm1" id="vizSelector1" type="text" name="vizDropdown1" placeholder="Select One">
+        <option id="Happiness.Score" value="Happiness.Score">Happiness Score</option>
+   </select>
+   <select class="vizForm2" id="vizSelector2" type="text" name="vizDropdown2" placeholder="Select One" >
+        <option disabled selected>Select an option</option>
+        <option id="Economy..GDP.per.Capita." value="Economy..GDP.per.Capita.">GDP</option>
+        <option id="Economy..GDP.per.Capita." value="Economy..GDP.per.Capita.">ahah</option>
+        <option id="Economy..GDP.per.Capita." value="Economy..GDP.per.Capita.">whwhw</option>
+   </select>
+   <input class="btn" type="submit" value="submit">
+</form>
 {% endblock %}
+<!-- {% block vizTitle %}Happiness score vs. GDP weight in happiness score{% endblock %} -->
+<!-- {% block description %}This visualization explores the relationship between the value placed in GDP when deciding how happy one is, and the overall percieved happiness in that country.{% endblock %} -->
+<!-- {% block controls %} -->
+    <!-- <button class="btn btn-dark" onclick="render()">Render Visualization</button> -->
+<!-- {% endblock %} -->
 <!-- The div containing the visualization is in viz-template.html -->
