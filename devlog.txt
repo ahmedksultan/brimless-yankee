@@ -172,3 +172,8 @@ Will continue working, TODO: edit design document with appropriate changes later
 ahmedS -- 2020-05-13 05:45
 Copied over HTML from happiness.html to terrorism.html.
 Fixed routes in __init__.py to include the /.
+
+ahmedS -- 2020-05-13 05:54
+Copied over HTML from happiness.html to freedom.html.
+Edited button in happiness.html to move to /terrorism, instead of /freedom.
+Updated devlog to reflect recent changes.
