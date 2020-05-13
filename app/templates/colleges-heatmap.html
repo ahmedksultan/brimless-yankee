@@ -1,6 +1,6 @@
 {% extends "viz-template.html" %}
 <!-- PLEASE LOOK AT viz-template.html TO UNDERSTAND WHAT IS HAPPENING -->
-{% block title %}Global Terrorism Heatmap{% endblock %}
+{% block title %}Global University Heatmap{% endblock %}
 {% block scriptPath %}{% endblock %}
 {% block body %}
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
@@ -9,11 +9,10 @@
     <script src="https://res.cloudinary.com/geotargetly/raw/upload/v1579830286/data/iso_3166_country_codes.json"></script>
     {{ super() }}
     {% block controls %}
-        <button class="btn btn-dark" onclick="render()">Render</button>
+        <button class="btn btn-dark" onClick="render()">Render</button>
     {% endblock %}
-
     <script>
-        console.log(data.happinessTerrorism);
+        console.log(data.happinessUni);
         var rendered = 0;
         const dataToRender = {};
         const processData = fetch("https://res.cloudinary.com/geotargetly/raw/upload/v1579830286/data/iso_3166_country_codes.json")
@@ -21,7 +20,7 @@
             return res.json();
         }).then(jsonCountryCodes => {
             console.log(jsonCountryCodes);
-            return data.happinessTerrorism.filter((obj, i) => {
+            return data.happinessUni.filter((obj, i) => {
                 return jsonCountryCodes.find((countryElement) => {
                     return countryElement["country_name"] === obj["Country"]
                 }) != undefined;
@@ -32,16 +31,16 @@
 
                 let fillKey;
                 switch(true){
-                    case (obj["terrorIncidents"] < 11):
+                    case (obj["uniCount"] < 6):
                         fillKey = "lv1";
                         break;
-                    case (obj["terrorIncidents"] < 101):
+                    case (obj["uniCount"] < 11):
                         fillKey = "lv2";
                         break;
-                    case (obj["terrorIncidents"] < 501):
+                    case (obj["uniCount"] < 21):
                         fillKey = "lv3";
                         break;
-                    case (obj["terrorIncidents"] < 1001):
+                    case (obj["uniCount"] < 31):
                         fillKey = "lv4";
                         break;
                     default:
@@ -49,7 +48,7 @@
                         break;
                 };
                 dataToRender[countryCode] = { "fillKey": fillKey, 
-                    "Number of Incidents": obj["terrorIncidents"] 
+                    "Number of Top Universities": obj["uniCount"] 
                 };
             });
         });
@@ -62,7 +61,7 @@
                         projection: 'mercator',
                          geographyConfig: {
                             popupTemplate: function (geography, data) {
-                                return '<div class="hoverinfo"><b>' + geography.properties.name + '</b><br/>Number of Terrorist Incidents: ' +  data["Number of Incidents"] + ' '
+                                return '<div class="hoverinfo"><b>' + geography.properties.name + '</b><br/>Number of Top Universities: ' +  data["Number of Top Universities"] + ' '
                             },
                         },
                         fills: {
@@ -82,5 +81,5 @@
 
 </script>
 {% endblock %}
-{% block vizTitle %}Global Terrorism Heatmap{% endblock %}
-{% block description %}Heatmap of Terrorist Incidents, 2017{% endblock %}
+{% block vizTitle %}Global University Heatmap{% endblock %}
+{% block description %}Heatmap of the 700 Top Globally Ranked Universities, 2016{% endblock %}
