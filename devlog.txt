@@ -159,3 +159,7 @@ Edited new-template to include d3 and script-loading functionality.
 Edited styles.css to reflect changes.
 Renamed functions with happiness-gdp.js to be simpler/more understandable.
 Edited __init__.py to pass the data.py module through Jinja on route /happiness.
+
+ahmedS -- 2020-05-13 04:20
+Scatterplots of happiness-score data fully working.
+Edited happiness.html to reflect changes.

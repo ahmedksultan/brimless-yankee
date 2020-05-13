@@ -54,29 +54,28 @@
 
      <!-- HEATMAP OF HAPPINESS SCORES (2016) -->
 
+     <br>
      <!-- VIEW INDIVIDUAL SCORES HERE -->
      <div class="container">
           <script>
                // next line shows an error in the linter but works perfectly
                var data = {{ data | tojson }};
           </script>
+
+          <h3 class="display-5">Weight of individual indicators on happiness score</h3>
      
           <br>
           <form class="vizSelection" method="">
-               <select class="vizForm1" id="vizSelector1" type="text" name="vizDropdown1" placeholder="Select One">
-                    <option title="Happiness Score" value="Happiness Score">Happiness Score</option>
-               </select>
                <select class="vizForm2" id="vizSelector2" type="text" name="vizDropdown2" placeholder="Select One">
                     <option disabled selected>Select an option</option>
-                    <option title="Happiness Rank" value="Happiness Rank">Happiness Rank</option>
                     <option title="GDP" value="GDP">GDP</option>
                     <option title="Health" value="Health">Health</option>
                     <option title="Family" value="Family">Family</option>
                     <option title="Freedom" value="Freedom">Freedom</option>
                     <option title="Generosity" value="Generosity">Generosity</option>
                     <option title="Trust in Government" value="Trust in Government">Trust in Government</option>
-               </select>
-               <input class="btn" type="button" value="submit" onclick="render()">
+               </select> <span>&emsp;</span>
+               <input type="button" class="btn btn-warning" value="Render visualization" onclick="render()">
           </form>
           <div id="viz" class="viz-container container"></div>
      </div>
