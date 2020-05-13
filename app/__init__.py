@@ -49,6 +49,10 @@ def terrorismHeatmap():
 def universityHeatmap():
     return render_template('colleges-heatmap.html', data=data)
 
+@app.route('/happiness')
+def happiness():
+    return render_template('happiness.html')
+
 if __name__ == "__main__":
     app.debug = True
     app.run()
