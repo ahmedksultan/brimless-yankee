@@ -163,3 +163,8 @@ Edited __init__.py to pass the data.py module through Jinja on route /happiness.
 ahmedS -- 2020-05-13 04:20
 Scatterplots of happiness-score data fully working.
 Edited happiness.html to reflect changes.
+
+ahmedS -- 2020-05-13 05:39 
+Edited __init__.py to include new routes: /terrorism & /freedom, to better reflect the narrative organization.
+Added new template .html files, terrorism.html and freedom.html, to match routes.
+Will continue working, TODO: edit design document with appropriate changes later today.

@@ -17,10 +17,27 @@ data = {
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
+# landing page for project, introduction
 @app.route('/')
 def index():
     return render_template('index.html')
 
+# world happiness report analysis, visualizations
+@app.route('/happiness')
+def happiness():
+    return render_template('happiness.html', data=data)
+
+# global terrorism database analysis, visualizations
+@app.route('terrorism')
+def terrorism():
+    return render_template('terrorism.html', data=data)
+
+# human freedom index analysis, visualizations
+@app.route('freedom')
+def freedom():
+    return render_template('freedom.html', data=data)
+
+'''
 @app.route('/happiness-rol')
 def happinessROL():
     return render_template('happiness-rol.html', data=data)
@@ -28,6 +45,7 @@ def happinessROL():
 @app.route('/happiness-gdp')
 def happinessGdp():
     return render_template('happiness-gdp.html', data=data)
+'''
 
 @app.route('/happiness-terrorism')
 def happinessTerrorism():
@@ -48,10 +66,6 @@ def terrorismHeatmap():
 @app.route('/university-heatmap')
 def universityHeatmap():
     return render_template('colleges-heatmap.html', data=data)
-
-@app.route('/happiness')
-def happiness():
-    return render_template('happiness.html', data=data)
 
 if __name__ == "__main__":
     app.debug = True
