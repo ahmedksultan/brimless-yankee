@@ -186,3 +186,8 @@ Fixed JS to allow visualizations work for uni, unemployment, and terrorism
 
 ahmedS -- 2020-05-14 05:04
 Cleaned up some of the code, and made small outlier disclaimer on some of the visualizations.
+
+ahmedS -- 2020-05-14 06:38
+Removed version 3 (?) of design.pdf.
+Added version 4, final version for forseeable future, of design.pdf.
+Updated README.md, should be good once video is finished uploading.
