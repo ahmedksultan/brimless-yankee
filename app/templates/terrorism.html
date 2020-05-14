@@ -18,10 +18,14 @@
      <div class="w-50 mx-auto">
           <!-- introduction -->
           <p class="text-justify">
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id erat consequat, posuere nisl
-               nec, condimentum urna. Donec quis malesuada tortor, ac bibendum augue. Vivamus ullamcorper, urna vel iaculis tempus, urna
-               diam dictum ante, sed hendrerit ipsum lectus ut metus. Aenean pulvinar, dolor a mollis vehicula, ex enim placerat erat, 
-               eget tristique justo purus a magna.
+               The <a href="https://www.kaggle.com/START-UMD/gtd">Global Terrorism Database</a>, from START (the National Consortium
+               for the Study of Terrorism and Responses to Terrorism) at the University of Maryland, College Park
+               contains information on over 180,000 terrorist attacks from around the world, going all the way back to 1970. We decided
+               to use this dataset to analyze all terrorist attacks in a particular year (2016), to see if the
+               concentration of terrorist incidents in a nation correlated to the happiness score within that same nation and year.
+
+               Our project includes two visualizations for the terrorism data: a geographical heatmap depicting concentration of terrorist
+               incidents within a nation, and a scatterplot comparing concentration of terrorist incidents to indicators from the WHR.
           </p>
           <br>
      </div>
@@ -69,6 +73,7 @@
                                    fillKey = "lv4";
                                    break;
                               default:
+                                   fillKey = "lvl5";
                                    break;
                          };
                          dataToRender[countryCode] = {
