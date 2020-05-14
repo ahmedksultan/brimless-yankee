@@ -15,12 +15,11 @@
 <div class="w-50 mx-auto">
      <!-- introduction -->
      <p class="text-justify">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id erat consequat, posuere nisl
-          nec, condimentum urna. Donec quis malesuada tortor, ac bibendum augue. Vivamus ullamcorper, urna vel iaculis
-          tempus, urna diam dictum ante, sed hendrerit ipsum lectus ut metus. Aenean pulvinar, dolor a mollis vehicula, ex enim
-          placerat erat, eget tristique justo purus a magna.
+          For the data on national unemployment levels, we used the ILO estimate of the total % unemployed out of the labor force from 
+          the <a href="https://data.worldbank.org/indicator/sl.uem.totl.zs">World Bank</a>. With this data, one can visualize unemployment
+          rates against one of the happiness indicators from the World Happiness Report, or the concentration of top universities from the
+          <a href="https://www.topuniversities.com/university-rankings/world-university-rankings/2016">2016-17 QS World Rankings</a>.
      </p>
-     <br>
 </div>
 
 <br>
@@ -36,7 +35,6 @@
           <select class="vizForm2" id="vizSelector2" type="text" name="vizDropdown2" placeholder="Select One">
                <option disabled selected>Select an option</option>
                <option title="Happiness Score" value="Happiness Score">Happiness Score</option>
-               <option title="Happiness Rank" value="Happiness Rank">Happiness Score Rank</option>
                <option title="GDP" value="GDP">GDP</option>
                <option title="Health" value="Health">Health</option>
                <option title="Family" value="Family">Family</option>
@@ -44,7 +42,7 @@
                <option title="Generosity" value="Generosity">Generosity</option>
                <option title="Trust in Government" value="Trust in Government">Trust in Government</option>
                <option title="University Count" value="University Count">University Count</option>
-          </select>
+          </select> <span>&emsp; &emsp;</span>
           <input type="button" class="btn btn-warning" value="Render visualization" onclick="render()">
      </form>
      <div id="viz" class="viz-container container"></div>
