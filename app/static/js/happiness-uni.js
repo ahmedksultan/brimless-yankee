@@ -20,7 +20,7 @@ const draw = function(data, var1, var2){
 
     // Add X axis
     var x = d3.scaleLinear()
-        .domain([0, d3.max(data.map((d) => d[var2]))])
+        .domain([0, 150])
         // .domain([0, 5])
         .range([ 0, width])
     svg.append("g")
