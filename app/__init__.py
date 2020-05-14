@@ -62,36 +62,6 @@ def university2():
 def conclusion():
     return render_template('conclusion.html', data=data)
 
-'''
-@app.route('/happiness-rol')
-def happinessROL():
-    return render_template('happiness-rol.html', data=data)
-
-@app.route('/happiness-gdp')
-def happinessGdp():
-    return render_template('happiness-gdp.html', data=data)
-'''
-
-@app.route('/happiness-terrorism')
-def happinessTerrorism():
-    return render_template('happiness-terrorism.html', data=data)
-
-@app.route('/happiness-unemployment')
-def happinessUnemployment():
-    return render_template('happiness-unemployment.html', data=data)
-
-@app.route('/happiness-uni')
-def happinessUni():
-    return render_template('happiness-uni.html', data=data)
-
-@app.route('/terrorism-heatmap')
-def terrorismHeatmap():
-    return render_template('terrorism-heatmap.html', data=data)
-
-@app.route('/university-heatmap')
-def universityHeatmap():
-    return render_template('colleges-heatmap.html', data=data)
-
 if __name__ == "__main__":
     app.debug = True
     app.run()

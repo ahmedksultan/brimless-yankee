@@ -183,3 +183,6 @@ Updated devlog to reflect recent changes.
 
 vishwaaS -- 2020-05-13 21:10
 Fixed JS to allow visualizations work for uni, unemployment, and terrorism
+
+ahmedS -- 2020-05-14 05:04
+Cleaned up some of the code, and made small outlier disclaimer on some of the visualizations.

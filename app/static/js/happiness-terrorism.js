@@ -50,7 +50,7 @@ const draw = function (data, var1, var2) {
             (height / 2) + ")" +
             "rotate(-90)")
         .style("text-anchor", "middle")
-        .text(var1);
+        .text("Incidents of terrorism");
 
 
     // // Lines

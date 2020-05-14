@@ -20,7 +20,7 @@ const draw = function(data, var1, var2){
 
     // Add X axis
     var x = d3.scaleLinear()
-        .domain([0, 150])
+        .domain([0, 50])
         // .domain([0, 5])
         .range([ 0, width])
     svg.append("g")
@@ -71,8 +71,8 @@ const draw = function(data, var1, var2){
     .append("circle")
         .transition()
         .duration(500)
-        .attr("cx", function(d) { return x(d[var2]); })
-        .attr("cy", function(d) { return y(d[var1]); })
+        .attr("cx", function(d) { return x(d[var1]); })
+        .attr("cy", function(d) { return y(d[var2]); })
         .attr("r", "4")
         .style("fill", "#b17db5")
         .attr("stroke", "black")
