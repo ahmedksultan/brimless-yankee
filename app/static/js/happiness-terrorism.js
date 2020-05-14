@@ -20,7 +20,7 @@ const draw = function (data, var1, var2) {
 
     // Add X axis
     var x = d3.scaleLinear()
-        .domain([0, d3.max(data.map((d) => d[var1]))])
+        .domain([0, d3.max(data.map((d) => d[var2]))])
         // .domain([0, 5])
         .range([0, width])
     svg.append("g")
@@ -34,11 +34,11 @@ const draw = function (data, var1, var2) {
             "translate(" + (width / 2) + " ," +
             (height + 40) + ")")
         .style("text-anchor", "middle")
-        .text(var1);
+        .text(var2);
 
     // Y axis
     var y = d3.scaleLinear()
-        .domain([0, d3.max(data.map((d) => d[var2]))])
+        .domain([0, d3.max(data.map((d) => d[var1]))])
         // .domain([0, 10])
         .range([height, 0])
     // .padding(1)
@@ -50,7 +50,7 @@ const draw = function (data, var1, var2) {
             (height / 2) + ")" +
             "rotate(-90)")
         .style("text-anchor", "middle")
-        .text(var2);
+        .text(var1);
 
 
     // // Lines
