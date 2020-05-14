@@ -2,12 +2,12 @@
 
 {% block title %}world-happiness{% endblock %}
 
-{% block scripts %}
-<script src="./static/js/happiness-rol.js"></script>
+{% block scripts %} 
+<script src="./static/js/happiness-unemployment.js"></script>
 {% endblock %}
 
 {% block body %}
-<h1 style="margin-top: 0.5em;" class="display-1">Human freedom</h1>
+<h1 style="margin-top: 0.5em;" class="display-1">Unemployment...</h1>
 <h3 class="display-5"><i>... and does it relate to happiness?</i></h3>
 
 <br>
@@ -27,41 +27,30 @@
 <!-- VIEW INDIVIDUAL SCORES HERE -->
 <div class="container">
      <script>
-          // next line shows an error in the linter but works perfectly
           var data = {{ data | tojson }};
      </script>
 
-     <h3 class="display-5">Indicators of human freedom vs. happiness score indicators</h3>
-
+     <h3 class="display-5">National rates of unemployment vs. happiness score indicators/university count</h3>
      <br>
      <form class="vizSelection" method="">
-          <select class="vizForm1" id="vizSelector1" type="text" name="vizDropdown1" placeholder="Select One">
-               <option title="Procedural Justice" value="Procedural Justice">Procedural Justice</option>
-               <option title="Civil Justice" value="Civil Justice">Civil Justice</option>
-               <option title="Criminal Justice" value="Criminal Justice">Criminal Justice</option>
-               <option title="Rule of Law" value="Rule of Law">Rule of Law</option>
-               <option title="Religious Freedom" value="Religious Freedom">Religious Freedom</option>
-               <option title="Freedom of Expression" value="Freedom of Expression">Freedom of Expression</option>
-               <option title="Divorce" value="Divorce">Divorce</option>
-               <option title="Judicial Independence" value="Judicial Independence">Judicial Independence</option>
-               <option title="Human Freedom" value="Human Freedom">Human Freedom</option>
-          </select>
           <select class="vizForm2" id="vizSelector2" type="text" name="vizDropdown2" placeholder="Select One">
                <option disabled selected>Select an option</option>
                <option title="Happiness Score" value="Happiness Score">Happiness Score</option>
+               <option title="Happiness Rank" value="Happiness Rank">Happiness Score Rank</option>
                <option title="GDP" value="GDP">GDP</option>
                <option title="Health" value="Health">Health</option>
                <option title="Family" value="Family">Family</option>
                <option title="Freedom" value="Freedom">Freedom</option>
                <option title="Generosity" value="Generosity">Generosity</option>
                <option title="Trust in Government" value="Trust in Government">Trust in Government</option>
-          </select> <span>&emsp;</span>
-          <input type="button" class="btn btn-warning" value="Render visualization" onclick="renderROL()">
+               <option title="University Count" value="University Count">University Count</option>
+          </select>
+          <input type="button" class="btn btn-warning" value="Render visualization" onclick="render()">
      </form>
      <div id="viz" class="viz-container container"></div>
 </div>
 
 <div class="w-50 my-5 mx-auto">
-     <a href="/unemployment" class="btn btn-warning btn-lg">&rarr; Continue</a>
+     <a href="/university" class="btn btn-warning btn-lg">&rarr; Continue</a>
 </div>
 {% endblock %}

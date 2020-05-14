@@ -1,11 +1,10 @@
 // setTimeout(() => console.log(data), 2500);
 var rendered = 0;
 
-const relation = function(data){
-    console.log("hi");
+const relation = function(data, var1, var2){
     // set the dimensions and margins of the graph
     var margin = {top: 10, right: 30, bottom: 40, left: 50},
-        width = 600 - margin.left - margin.right,
+        width = 800 - margin.left - margin.right,
         height = 600 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
@@ -80,7 +79,6 @@ const relation = function(data){
 }
 
 const redraw = function (data, var1, var2) {
-    console.log("hello:", var1, ",", var2);
     // set the dimensions and margins of the graph
     var margin = { top: 10, right: 30, bottom: 40, left: 50 },
         width = 600 - margin.left - margin.right,
@@ -162,7 +160,7 @@ const renderROL = function(){
   const viz2 = String(document.getElementById("vizSelector2").value);
 
     if (rendered === 0){
-        relation(data.happinessROL);
+        relation(data.happinessROL, viz1, viz2);
         rendered = 1;
     } else {
         d3.select("svg").remove();

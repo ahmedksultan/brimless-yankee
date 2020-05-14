@@ -27,11 +27,12 @@ def index():
 def happiness():
     return render_template('happiness.html', data=data)
 
-# global terrorism database analysis, visualizations
+# global terrorism database analysis, heatmap
 @app.route('/terrorism')
 def terrorism():
     return render_template('terrorism.html', data=data)
 
+# global terrorism database analysis, visualizations
 @app.route('/terrorism2')
 def terrorism2():
     return render_template('terrorism2.html', data=data)
@@ -40,6 +41,26 @@ def terrorism2():
 @app.route('/freedom')
 def freedom():
     return render_template('freedom.html', data=data)
+
+# national unemployment rates (ILO) statistics analysis, visualizations
+@app.route('/unemployment')
+def unemployment():
+    return render_template('unemployment.html', data=data)
+
+# qs world university rankings, heatmap
+@app.route('/university')
+def university():
+    return render_template('university.html', data=data)
+
+# qs world university rankings, visualizations
+@app.route('/university2')
+def university2():
+    return render_template('university2.html', data=data)
+
+# conclusion of project/sharing of data, etc.
+@app.route('/conclusion')
+def conclusion():
+    return render_template('conclusion.html', data=data)
 
 '''
 @app.route('/happiness-rol')

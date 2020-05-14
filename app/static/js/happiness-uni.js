@@ -1,8 +1,7 @@
 // setTimeout(() => console.log(data), 2500);
 var rendered = 0;
 
-const countriesUni = function(data){
-    console.log("hi");
+const draw = function(data, var1, var2){
     // set the dimensions and margins of the graph
     var margin = {top: 10, right: 30, bottom: 40, left: 50},
         width = 600 - margin.left - margin.right,
@@ -21,7 +20,7 @@ const countriesUni = function(data){
 
     // Add X axis
     var x = d3.scaleLinear()
-        .domain([0, d3.max(data.map((d) => d["uniCount"]))])
+        .domain([0, d3.max(data.map((d) => d[var1]))])
         // .domain([0, 5])
         .range([ 0, width])
     svg.append("g")
@@ -35,12 +34,11 @@ const countriesUni = function(data){
               "translate(" + (width/2) + " ," +
                              (height + 40) + ")")
         .style("text-anchor", "middle")
-        .text(`Extent to which top univiersities contribute to the
-    Happiness Score.`);
+        .text(var1);
 
     // Y axis
     var y = d3.scaleLinear()
-    .domain([0, d3.max(data.map((d) => d["Happiness.Score"]))])
+    .domain([0, d3.max(data.map((d) => d[var2]))])
     // .domain([0, 10])
     .range([height, 0])
     // .padding(1)
@@ -52,7 +50,7 @@ const countriesUni = function(data){
                             (height/2) + ")" +
             "rotate(-90)")
         .style("text-anchor", "middle")
-        .text("Happiness Score");
+        .text(var2);
 
 
     // // Lines
@@ -82,8 +80,13 @@ const countriesUni = function(data){
 
 
 const render = function(){
-    if (rendered === 0){
-        countriesUni(data.happinessUni);
+    const viz1 = "University Count";
+    const viz2 = String(document.getElementById("vizSelector2").value);
+    if (rendered === 0) {
+        draw(data.happinessUni, viz1, viz2);
         rendered = 1;
+    } else {
+        d3.select("svg").remove();
+        draw(data.happinessUni, viz1, viz2);
     }
 }

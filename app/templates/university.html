@@ -1,0 +1,117 @@
+{% extends "new-template.html" %}
+
+{% block title %}world-happiness{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block body %}
+     <script>
+          // next line shows an error in the linter but works perfectly
+          var data = {{ data | tojson }};
+     </script>
+     <h1 style="margin-top: 0.5em;" class="display-1">Concentration of top universities...</h1>
+     <h3 class="display-5"><i>... and does it relate to happiness?</i></h3>
+
+     <br>
+
+     <div class="w-50 mx-auto">
+          <!-- introduction -->
+          <p class="text-justify">
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id erat consequat, posuere nisl
+               nec, condimentum urna. Donec quis malesuada tortor, ac bibendum augue. Vivamus ullamcorper, urna vel iaculis
+               tempus, urna diam dictum ante, sed hendrerit ipsum lectus ut metus. Aenean pulvinar, dolor a mollis vehicula,
+               ex enim placerat erat, eget tristique justo purus a magna.
+          </p>
+          <br>
+     </div>
+
+     <br>
+
+     <!-- GEOGRAPHICAL HEATMAP OF CONCENTRATION OF TOP UNIVERSITIES -->
+     <h3 class="display-5">Geographical heatmap, concentration of top universities</h3>
+     <br>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+     <script src="./static/js/datamaps.world.min.js"></script>
+     <script src="https://res.cloudinary.com/geotargetly/raw/upload/v1579830286/data/iso_3166_country_codes.json"></script>
+
+     {{ super() }}
+     <div id="viz" class="viz-container container"></div>
+
+     <script>
+          var rendered = 0;
+          const dataToRender = {};
+          const processData = fetch("https://res.cloudinary.com/geotargetly/raw/upload/v1579830286/data/iso_3166_country_codes.json")
+               .then(res => {
+                    return res.json();
+               }).then(jsonCountryCodes => {
+                    return data.happinessUni.filter((obj, i) => {
+                         return jsonCountryCodes.find((countryElement) => {
+                              return countryElement["country_name"] === obj["Country"]
+                         }) != undefined;
+                    }).map((obj, i) => {
+                         let countryCode = jsonCountryCodes.find((countryElement) => {
+                              return countryElement["country_name"] === obj["Country"]
+                         })["alpha_3"];
+
+                         let fillKey;
+                         switch (true) {
+                              case (obj["University Count"] < 6):
+                                   fillKey = "lv1";
+                                   break;
+                              case (obj["University Count"] < 11):
+                                   fillKey = "lv2";
+                                   break;
+                              case (obj["University Count"] < 21):
+                                   fillKey = "lv3";
+                                   break;
+                              case (obj["University Count"] < 31):
+                                   fillKey = "lv4";
+                                   break;
+                              default:
+                                   fillKey = "lv5";
+                                   break;
+                         };
+                         dataToRender[countryCode] = {
+                              "fillKey": fillKey,
+                              "Number of Top Universities": obj["University Count"]
+                         };
+                    });
+               });
+
+          const render = () => {
+               if (rendered === 0) {
+                    processData.then(() => {
+                         var basic_choropleth = new Datamap({
+                              element: document.getElementById("viz"),
+                              projection: 'mercator',
+                              geographyConfig: {
+                                   popupTemplate: function (geography, data) {
+                                        return '<div class="hoverinfo"><b>' + geography.properties.name + '</b><br/>Number of Top Universities: ' + data["Number of Top Universities"] + ' '
+                                   },
+                              },
+                              fills: {
+                                   defaultFill: "#ccc",
+                                   lv5: '#e31a00',
+                                   lv4: '#e04734',
+                                   lv3: '#e36252',
+                                   lv2: '#de7d71',
+                                   lv1: '#e0b1ab'
+                              },
+                              data: dataToRender
+                         });
+                    });
+                    rendered = 1;
+               };
+          };
+          window.onload = render();
+     </script>
+
+     <br>
+
+     <div class="w-50 my-5 mx-auto">
+          <a href="/university2" class="btn btn-warning btn-lg">&rarr; Continue</a>
+     </div>
+
+{% endblock %}

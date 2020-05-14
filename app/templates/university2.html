@@ -1,0 +1,56 @@
+{% extends "new-template.html" %}
+
+{% block title %}world-happiness{% endblock %}
+
+{% block scripts %}
+<script src="./static/js/happiness-uni.js"></script>
+{% endblock %}
+
+{% block body %}
+     <script>
+          var data = {{ data | tojson }};
+     </script>
+     <h1 style="margin-top: 0.5em;" class="display-1">Concentration of top universities...</h1>
+     <h3 class="display-5"><i>... and does it relate to happiness?</i></h3>
+     
+     <br>
+     
+     <div class="w-50 mx-auto">
+          <!-- introduction -->
+          <p class="text-justify">
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id erat consequat, posuere nisl
+               nec, condimentum urna. Donec quis malesuada tortor, ac bibendum augue. Vivamus ullamcorper, urna vel iaculis
+               tempus, urna diam dictum ante, sed hendrerit ipsum lectus ut metus. Aenean pulvinar, dolor a mollis vehicula,
+               ex enim placerat erat, eget tristique justo purus a magna.
+          </p>
+          <br>
+     </div>
+     
+     <br>
+     
+     <!-- VIEW INDIVIDUAL SCORES HERE -->
+     <div class="container">
+          <h3 class="display-5">Indicators of human freedom vs. happiness score indicators</h3>
+          
+          <br>
+          <form class="vizSelection" method="">
+               <select class="vizForm2" id="vizSelector2" type="text" name="vizDropdown2" placeholder="Select One">
+                    <option disabled selected>Select an option</option>
+                    <option title="Happiness Score" value="Happiness Score">Happiness Score</option>
+                    <option title="GDP" value="GDP">GDP</option>
+                    <option title="Health" value="Health">Health</option>
+                    <option title="Family" value="Family">Family</option>
+                    <option title="Freedom" value="Freedom">Freedom</option>
+                    <option title="Generosity" value="Generosity">Generosity</option>
+                    <option title="Trust in Government" value="Trust in Government">Trust in Government</option>
+               </select> <span>&emsp;</span>
+               <input type="button" class="btn btn-warning" value="Render visualization" onclick="render()">
+          </form>
+          <div id="viz" class="viz-container container"></div>
+     </div>
+
+     <div class="w-50 my-5 mx-auto">
+          <a href="/conclusion" class="btn btn-warning btn-lg">&rarr; Continue</a>
+     </div>
+
+{% endblock %}
